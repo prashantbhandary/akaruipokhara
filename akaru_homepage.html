@@ -1361,7 +1361,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const glyphs = ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ヌ', 'ネ', 'ノ', 'ホ', 'ミ', 'ラ', 'リ', 'ル', '日', '月', '火', '水', '木', '金', '土', '山', '川', '田', '人', '口', '学', '生', '先', '私', '年', '時', '本', '夢'];
-    const targets = document.querySelectorAll('nav, section, footer, .marquee-strip');
+    const targets = document.querySelectorAll('nav, section:not(.hero), footer, .marquee-strip');
 
     targets.forEach((target, targetIndex) => {
       if (target.querySelector('.jp-glyph-layer')) return;
