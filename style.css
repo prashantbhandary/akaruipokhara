@@ -43,6 +43,11 @@ nav {
   flex-direction: column;
   line-height: 1;
 }
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
 .logo span:first-of-type { color: var(--red); font-size: 1em; font-weight: 800; }
 .logo span:not(:first-of-type) { color: var(--navy); font-size: 0.35em; font-weight: 600; display: block; letter-spacing: 0.05em; margin-top: 2px; font-family: 'Open Sans', sans-serif; }
 
@@ -773,6 +778,12 @@ footer {
   font-weight: 800;
   color: white;
   text-decoration: none;
+  display: inline-block;
+}
+.logo-img-footer {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
 }
 .footer-logo em { font-style: normal; color: var(--red); }
 
