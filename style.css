@@ -147,6 +147,32 @@ nav {
   position: relative;
 }
 
+.kana-float-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.kana-float {
+  position: absolute;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.6vw, 4rem);
+  line-height: 1;
+  color: rgba(26,54,93,0.10);
+  text-shadow: 0 12px 24px rgba(26,54,93,0.05);
+  animation: kanaDrift var(--duration, 14s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg));
+}
+
+.kana-float.red {
+  color: rgba(227,30,36,0.10);
+  text-shadow: 0 12px 24px rgba(227,30,36,0.05);
+}
+
 .hero-left {
   display: flex;
   flex-direction: column;
@@ -274,6 +300,15 @@ nav {
   position: relative;
   background: var(--navy);
   overflow: hidden;
+}
+
+@keyframes kanaDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(calc(var(--rotate, 0deg) + 4deg));
+  }
 }
 
 .reel-header {
