@@ -19,18 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Handle form submission
+ * Handle form submission with Formspree
  */
 function handleFormSubmit() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
-  const firstName = form.querySelector('input[placeholder="Rajesh"]').value.trim();
-  const lastName = form.querySelector('input[placeholder="Thapa"]').value.trim();
-  const phone = form.querySelector('input[placeholder="+977 98XXXXXXXX"]').value.trim();
-  const email = form.querySelector('input[placeholder="you@email.com"]').value.trim();
-  const destination = form.querySelector('select').value;
-  const message = form.querySelector('textarea')?.value.trim() || '';
+  const firstName = form.querySelector('input[name="firstName"]').value.trim();
+  const lastName = form.querySelector('input[name="lastName"]').value.trim();
+  const phone = form.querySelector('input[name="phone"]').value.trim();
+  const email = form.querySelector('input[name="email"]').value.trim();
+  const city = form.querySelector('select[name="city"]').value;
+  const message = form.querySelector('textarea[name="message"]')?.value.trim() || '';
 
   // Basic validation
   if (!firstName || !lastName || !phone || !email) {
@@ -44,22 +44,35 @@ function handleFormSubmit() {
     return;
   }
 
-  // Log form data (in production, this would be sent to a server)
-  console.log('Form Data:', {
-    firstName,
-    lastName,
-    phone,
-    email,
-    destination,
-    message,
-    timestamp: new Date().toISOString()
+  // Prepare form data for Formspree
+  const formData = new FormData();
+  formData.append('firstName', firstName);
+  formData.append('lastName', lastName);
+  formData.append('phone', phone);
+  formData.append('email', email);
+  formData.append('city', city);
+  formData.append('message', message);
+
+  // Submit to Formspree
+  fetch('https://formspree.io/f/xqegagrl', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Thank you for your interest! We will contact you within 24 hours.');
+      form.reset();
+    } else {
+      alert('There was an error submitting the form. Please try again.');
+    }
+  })
+  .catch(error => {
+    console.error('Form submission error:', error);
+    alert('There was an error submitting the form. Please try again.');
   });
-
-  // Show success message
-  alert('Thank you for your interest! We will contact you within 24 hours.');
-
-  // Reset form
-  form.reset();
 }
 
 /**
