@@ -22,6 +22,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Free Counselling →</a>
+  <a href="tel:+977XXXXXXXXXX" class="nav-call">📞 Call Us</a>
 </nav>
 
 <!-- HERO -->
@@ -37,6 +38,7 @@
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Get Free Counselling →</a>
+      <a href="tel:+977XXXXXXXXXX" class="btn-call">📞 Call Us Now</a>
       <a href="#destinations" class="btn-outline">Explore Destinations</a>
     </div>
     <div class="hero-stats">
@@ -56,20 +58,62 @@
   </div>
 
   <div class="hero-right">
-    <div class="hero-bg-text">GO!</div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-card-title">✈️ Top Destinations</div>
-        <div class="dest-grid">
-          <div class="dest-item"><span class="flag">🇦🇺</span>Australia</div>
-          <div class="dest-item"><span class="flag">🇬🇧</span>UK</div>
-          <div class="dest-item"><span class="flag">🇨🇦</span>Canada</div>
-          <div class="dest-item"><span class="flag">🇺🇸</span>USA</div>
-          <div class="dest-item"><span class="flag">🇯🇵</span>Japan</div>
-          <div class="dest-item"><span class="flag">🇳🇿</span>NZ</div>
+    <!-- HERO PHOTO REEL — replace slide-photo backgrounds with real images: style="background-image:url('photos/your-photo.jpg')" -->
+    <div class="hero-reel" id="heroReel">
+
+      <div class="hero-reel-slide active">
+        <div class="reel-photo" style="background: linear-gradient(160deg, #1A365D 0%, #2d5a9e 45%, #0D2440 100%)"></div>
+        <div class="reel-watermark-text">Dreams Take Flight</div>
+        <img src="photos/Akarui Logo.webp" alt="" class="reel-logo-watermark" aria-hidden="true">
+        <div class="reel-caption">
+          <div class="reel-caption-tag">🇯🇵 Tokyo, Japan</div>
+          <div class="reel-caption-quote">"Got into Waseda University — my dream school."</div>
+          <div class="reel-caption-name">— Anish M., Class of 2024</div>
         </div>
       </div>
+
+      <div class="hero-reel-slide">
+        <div class="reel-photo" style="background: linear-gradient(160deg, #0D3B2E 0%, #1B8E5E 50%, #0A2920 100%)"></div>
+        <div class="reel-watermark-text">Visa Approved</div>
+        <img src="photos/Akarui Logo.webp" alt="" class="reel-logo-watermark" aria-hidden="true">
+        <div class="reel-caption">
+          <div class="reel-caption-tag">🇦🇺 Melbourne, Australia</div>
+          <div class="reel-caption-quote">"Visa approved in 3 weeks. AKARU! handled everything."</div>
+          <div class="reel-caption-name">— Sunita M., Class of 2025</div>
+        </div>
+      </div>
+
+      <div class="hero-reel-slide">
+        <div class="reel-photo" style="background: linear-gradient(160deg, #4A0D1A 0%, #E31E24 50%, #1A365D 100%)"></div>
+        <div class="reel-watermark-text">Scholarship Won</div>
+        <img src="photos/Akarui Logo.webp" alt="" class="reel-logo-watermark" aria-hidden="true">
+        <div class="reel-caption">
+          <div class="reel-caption-tag">🇨🇦 Toronto, Canada</div>
+          <div class="reel-caption-quote">"First in my family to study abroad — with a scholarship!"</div>
+          <div class="reel-caption-name">— Roshan B., Class of 2024</div>
+        </div>
+      </div>
+
+      <div class="hero-reel-slide">
+        <div class="reel-photo" style="background: linear-gradient(160deg, #1A365D 0%, #4A1942 50%, #2D3748 100%)"></div>
+        <div class="reel-watermark-text">New Beginnings</div>
+        <img src="photos/Akarui Logo.webp" alt="" class="reel-logo-watermark" aria-hidden="true">
+        <div class="reel-caption">
+          <div class="reel-caption-tag">🇬🇧 London, UK</div>
+          <div class="reel-caption-quote">"Two months after visiting AKARU!, I was on a plane to London."</div>
+          <div class="reel-caption-name">— Kabita S., Class of 2025</div>
+        </div>
+      </div>
+
     </div>
+
+    <div class="reel-dots" id="reelDots">
+      <span class="reel-dot active" data-reel="0"></span>
+      <span class="reel-dot" data-reel="1"></span>
+      <span class="reel-dot" data-reel="2"></span>
+      <span class="reel-dot" data-reel="3"></span>
+    </div>
+
     <div class="floating-badge badge-success">
       <div class="dot"></div> Visa Approved 🎉
     </div>
@@ -520,7 +564,7 @@
           <div class="info-icon">🌐</div>
           <div>
             <div class="info-label">Social Media</div>
-            <div class="info-value">@akaruipokhara12</div>
+            <div class="info-value">@akaruipokhara</div>
           </div>
         </div>
       </div>
@@ -574,6 +618,7 @@
         <textarea name="message" placeholder="Tell us about your academic background, goals, or any questions..."></textarea>
       </div>
       <button type="submit" class="submit-btn">Submit — Get Free Counselling →</button>
+      <a href="tel:+977XXXXXXXXXX" class="call-now-btn">📞 Call Us Now — Instant Help</a>
     </form>
   </div>
 </section>

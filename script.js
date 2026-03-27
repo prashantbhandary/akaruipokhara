@@ -194,5 +194,51 @@ function initGallerySlider() {
 
 document.addEventListener('DOMContentLoaded', initGallerySlider);
 
+/**
+ * Hero reel auto-slider
+ */
+function initHeroReel() {
+  const slides = document.querySelectorAll('.hero-reel-slide');
+  const dots = document.querySelectorAll('.reel-dot');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startTimer() {
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopTimer();
+      goTo(i);
+      startTimer();
+    });
+  });
+
+  const reel = document.querySelector('.hero-right');
+  if (reel) {
+    reel.addEventListener('mouseenter', stopTimer);
+    reel.addEventListener('mouseleave', startTimer);
+  }
+
+  startTimer();
+}
+
+document.addEventListener('DOMContentLoaded', initHeroReel);
+
 // Call on scroll
 window.addEventListener('scroll', updateActiveNavLink);
