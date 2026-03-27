@@ -364,6 +364,7 @@ section { padding: 6rem 8vw; }
 .country-card:hover::before { opacity: 1; }
 .country-card:hover .country-name, .country-card:hover .country-meta { color: white; }
 .country-card:hover .country-flag { transform: scale(1.1); }
+.country-card:hover div[style*="font-size: 0.8rem"] { color: rgba(255, 255, 255, 0.9); }
 
 .country-card > * { position: relative; z-index: 1; }
 
