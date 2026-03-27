@@ -91,6 +91,49 @@
     position: relative;
   }
 
+  nav, section, footer, .marquee-strip {
+    isolation: isolate;
+  }
+
+  nav > *:not(.jp-glyph-layer),
+  section > *:not(.jp-glyph-layer),
+  footer > *:not(.jp-glyph-layer),
+  .marquee-strip > *:not(.jp-glyph-layer) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .jp-glyph-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .jp-glyph {
+    position: absolute;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: var(--size, clamp(1.2rem, 2vw, 2.4rem));
+    line-height: 1;
+    color: rgba(26,54,93,0.08);
+    text-shadow: 0 8px 18px rgba(26,54,93,0.04);
+    animation: glyphDrift var(--duration, 18s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
+    user-select: none;
+  }
+
+  .jp-glyph.red {
+    color: rgba(227,30,36,0.07);
+    text-shadow: 0 8px 18px rgba(227,30,36,0.04);
+  }
+
+  .jp-glyph.soft {
+    opacity: 0.65;
+  }
+
   .kana-float-layer {
     position: absolute;
     inset: 0;
@@ -250,6 +293,18 @@
     }
     50% {
       transform: translate3d(var(--drift-x, 14px), var(--drift-y, -24px), 0) rotate(calc(var(--rotate, 0deg) + 6deg)) scale(1.08);
+    }
+  }
+
+  @keyframes glyphDrift {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
+    }
+    35% {
+      transform: translate3d(var(--drift-x, 10px), calc(var(--drift-y, -18px) * 0.5), 0) rotate(calc(var(--rotate, 0deg) - 3deg)) scale(1.04);
+    }
+    70% {
+      transform: translate3d(calc(var(--drift-x, 10px) * -0.8), var(--drift-y, -18px), 0) rotate(calc(var(--rotate, 0deg) + 4deg)) scale(1.08);
     }
   }
 
@@ -1302,6 +1357,41 @@
   </ul>
   <p>© 2025 AKARUI! Education Consultancy (P) Ltd. · Pokhara, Nepal</p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const glyphs = ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ヌ', 'ネ', 'ノ', 'ホ', 'ミ', 'ラ', 'リ', 'ル', '日', '月', '火', '水', '木', '金', '土', '山', '川', '田', '人', '口', '学', '生', '先', '私', '年', '時', '本', '夢'];
+    const targets = document.querySelectorAll('nav, section, footer, .marquee-strip');
+
+    targets.forEach((target, targetIndex) => {
+      if (target.querySelector('.jp-glyph-layer')) return;
+
+      const layer = document.createElement('div');
+      layer.className = 'jp-glyph-layer';
+      layer.setAttribute('aria-hidden', 'true');
+
+      const glyphCount = target.matches('nav, footer, .marquee-strip') ? 8 : 14;
+
+      for (let index = 0; index < glyphCount; index += 1) {
+        const glyph = document.createElement('span');
+        const charIndex = (targetIndex * 7 + index * 5) % glyphs.length;
+        glyph.className = `jp-glyph${index % 3 === 1 ? ' red' : ''}${index % 4 === 0 ? ' soft' : ''}`;
+        glyph.textContent = glyphs[charIndex];
+        glyph.style.left = `${6 + ((index * 11 + targetIndex * 7) % 84)}%`;
+        glyph.style.top = `${8 + ((index * 13 + targetIndex * 9) % 78)}%`;
+        glyph.style.setProperty('--size', `${1.15 + ((index + targetIndex) % 5) * 0.45}rem`);
+        glyph.style.setProperty('--duration', `${15 + ((index + targetIndex) % 7) * 1.8}s`);
+        glyph.style.setProperty('--delay', `${-1 * ((index * 1.3) % 8)}s`);
+        glyph.style.setProperty('--rotate', `${((index % 6) - 3) * 4}deg`);
+        glyph.style.setProperty('--drift-x', `${index % 2 === 0 ? 12 + (index % 4) * 4 : -12 - (index % 4) * 4}px`);
+        glyph.style.setProperty('--drift-y', `${-14 - (index % 5) * 5}px`);
+        layer.appendChild(glyph);
+      }
+
+      target.prepend(layer);
+    });
+  });
+</script>
 
 </body>
 </html>

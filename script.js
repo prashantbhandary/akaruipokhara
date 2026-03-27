@@ -9,7 +9,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Smooth scroll for anchor links
   initializeSmoothScroll();
+
+  // Decorative Japanese glyphs across the site
+  initializeSiteGlyphs();
 });
+
+function initializeSiteGlyphs() {
+  const glyphs = ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ヌ', 'ネ', 'ノ', 'ホ', 'ミ', 'ラ', 'リ', 'ル', '日', '月', '火', '水', '木', '金', '土', '山', '川', '田', '人', '口', '学', '生', '先', '私', '年', '時', '本', '夢'];
+  const targets = document.querySelectorAll('nav, section, footer, .marquee-strip');
+
+  targets.forEach((target, targetIndex) => {
+    if (target.querySelector('.jp-glyph-layer')) return;
+
+    const layer = document.createElement('div');
+    layer.className = 'jp-glyph-layer';
+    layer.setAttribute('aria-hidden', 'true');
+
+    const glyphCount = target.matches('nav, footer, .marquee-strip') ? 8 : 14;
+
+    for (let index = 0; index < glyphCount; index += 1) {
+      const glyph = document.createElement('span');
+      const charIndex = (targetIndex * 7 + index * 5) % glyphs.length;
+      glyph.className = `jp-glyph${index % 3 === 1 ? ' red' : ''}${index % 4 === 0 ? ' soft' : ''}`;
+      glyph.textContent = glyphs[charIndex];
+      glyph.style.left = `${6 + ((index * 11 + targetIndex * 7) % 84)}%`;
+      glyph.style.top = `${8 + ((index * 13 + targetIndex * 9) % 78)}%`;
+      glyph.style.setProperty('--size', `${1.15 + ((index + targetIndex) % 5) * 0.45}rem`);
+      glyph.style.setProperty('--duration', `${15 + ((index + targetIndex) % 7) * 1.8}s`);
+      glyph.style.setProperty('--delay', `${-1 * ((index * 1.3) % 8)}s`);
+      glyph.style.setProperty('--rotate', `${((index % 6) - 3) * 4}deg`);
+      glyph.style.setProperty('--drift-x', `${index % 2 === 0 ? 12 + (index % 4) * 4 : -12 - (index % 4) * 4}px`);
+      glyph.style.setProperty('--drift-y', `${-14 - (index % 5) * 5}px`);
+      layer.appendChild(glyph);
+    }
+
+    target.prepend(layer);
+  });
+}
 
 function translateText(key, fallback) {
   const i18n = window.AkaruiI18n;

@@ -147,6 +147,49 @@ nav {
   position: relative;
 }
 
+nav, section, footer, .marquee-strip {
+  isolation: isolate;
+}
+
+nav > *:not(.jp-glyph-layer),
+section > *:not(.jp-glyph-layer),
+footer > *:not(.jp-glyph-layer),
+.marquee-strip > *:not(.jp-glyph-layer) {
+  position: relative;
+  z-index: 1;
+}
+
+.jp-glyph-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.jp-glyph {
+  position: absolute;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: var(--size, clamp(1.2rem, 2vw, 2.4rem));
+  line-height: 1;
+  color: rgba(26,54,93,0.08);
+  text-shadow: 0 8px 18px rgba(26,54,93,0.04);
+  animation: glyphDrift var(--duration, 18s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
+  user-select: none;
+}
+
+.jp-glyph.red {
+  color: rgba(227,30,36,0.07);
+  text-shadow: 0 8px 18px rgba(227,30,36,0.04);
+}
+
+.jp-glyph.soft {
+  opacity: 0.65;
+}
+
 .kana-float-layer {
   position: absolute;
   inset: 0;
@@ -308,6 +351,18 @@ nav {
   }
   50% {
     transform: translate3d(var(--drift-x, 14px), var(--drift-y, -24px), 0) rotate(calc(var(--rotate, 0deg) + 6deg)) scale(1.08);
+  }
+}
+
+@keyframes glyphDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
+  }
+  35% {
+    transform: translate3d(var(--drift-x, 10px), calc(var(--drift-y, -18px) * 0.5), 0) rotate(calc(var(--rotate, 0deg) - 3deg)) scale(1.04);
+  }
+  70% {
+    transform: translate3d(calc(var(--drift-x, 10px) * -0.8), var(--drift-y, -18px), 0) rotate(calc(var(--rotate, 0deg) + 4deg)) scale(1.08);
   }
 }
 
