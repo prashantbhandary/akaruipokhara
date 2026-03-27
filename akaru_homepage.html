@@ -338,12 +338,27 @@
     overflow: hidden;
   }
 
-  .hero-photo {
+  .hero-photo-stage {
     height: 510px;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background: var(--off-white);
+  }
+
+  .hero-photo-slide {
+    position: absolute;
+    inset: 0;
     background-size: cover;
     background-position: center;
-    position: relative;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.7s ease, transform 1.4s ease;
+  }
+
+  .hero-photo-slide.active {
+    opacity: 1;
+    transform: scale(1);
   }
 
   .hero-photo-overlay {
@@ -372,6 +387,32 @@
     font-size: 0.95rem;
     line-height: 1.45;
     font-weight: 600;
+  }
+
+  .hero-photo-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.15rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.42rem;
+    z-index: 3;
+  }
+
+  .hero-photo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.65);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .hero-photo-dot.active {
+    width: 22px;
+    background: white;
   }
 
   .floating-badge {
@@ -1005,10 +1046,29 @@
     <div class="hero-bg-text">JPN</div>
     <div class="hero-visual">
       <div class="hero-photo-frame">
-        <div class="hero-photo" style="background-image: url('photos/Akarui/503826134_2433177657067291_3053709044344693212_n.png')">
-          <div class="hero-photo-overlay">
-            <div class="hero-photo-label">Student Journey</div>
-            <div class="hero-photo-caption">From Pokhara to Japan, one guided step at a time.</div>
+        <div class="hero-photo-stage" id="heroPhotoStage">
+          <div class="hero-photo-slide active" style="background-image: url('photos/Akarui/503826134_2433177657067291_3053709044344693212_n.png')">
+            <div class="hero-photo-overlay">
+              <div class="hero-photo-label">Student Journey</div>
+              <div class="hero-photo-caption">From Pokhara to Japan, one guided step at a time.</div>
+            </div>
+          </div>
+          <div class="hero-photo-slide" style="background-image: url('photos/Akarui/503873385_2433175170400873_9182303486434431277_n.png')">
+            <div class="hero-photo-overlay">
+              <div class="hero-photo-label">Visa Ready</div>
+              <div class="hero-photo-caption">Document prep, interview coaching, and smooth approval support.</div>
+            </div>
+          </div>
+          <div class="hero-photo-slide" style="background-image: url('photos/Akarui/503876435_2433175603734163_1024917401031056427_n.png')">
+            <div class="hero-photo-overlay">
+              <div class="hero-photo-label">Japan Arrival</div>
+              <div class="hero-photo-caption">Housing and city guidance so students land with confidence.</div>
+            </div>
+          </div>
+          <div class="hero-photo-dots" id="heroPhotoDots">
+            <span class="hero-photo-dot active" data-photo="0"></span>
+            <span class="hero-photo-dot" data-photo="1"></span>
+            <span class="hero-photo-dot" data-photo="2"></span>
           </div>
         </div>
       </div>
@@ -1396,7 +1456,54 @@
 
       target.prepend(layer);
     });
+
+    initializeHeroPhotoSlider();
   });
+
+  function initializeHeroPhotoSlider() {
+    const slides = Array.from(document.querySelectorAll('#heroPhotoStage .hero-photo-slide'));
+    const dots = Array.from(document.querySelectorAll('#heroPhotoDots .hero-photo-dot'));
+    if (!slides.length || !dots.length) return;
+
+    let current = 0;
+    let timer = null;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function start() {
+      timer = setInterval(function () {
+        goTo(current + 1);
+      }, 3800);
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+      }
+    }
+
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        stop();
+        goTo(index);
+        start();
+      });
+    });
+
+    const frame = document.querySelector('.hero-photo-frame');
+    if (frame) {
+      frame.addEventListener('mouseenter', stop);
+      frame.addEventListener('mouseleave', start);
+    }
+
+    start();
+  }
 </script>
 
 </body>
