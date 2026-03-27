@@ -385,6 +385,42 @@ section { padding: 6rem 8vw; }
   transition: transform 0.3s;
 }
 
+/* ─── CITY COMPARISON TABLE ─── */
+table {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+table thead tr {
+  background: var(--off-white);
+}
+
+table th {
+  font-size: 0.9rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+table td {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+table tbody tr:hover {
+  background: rgba(227, 30, 36, 0.02);
+  transition: background 0.2s;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.875rem;
+  }
+  table th, table td {
+    padding: 0.8rem 0.5rem !important;
+  }
+}
+
 /* ─── WHY US ─── */
 .why-section {
   display: grid;
