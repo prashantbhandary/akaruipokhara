@@ -40,14 +40,11 @@
   }
 
   .logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--red);
-    letter-spacing: -0.5px;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
   }
-  .logo span { color: var(--black); font-size: 0.7em; font-weight: 400; display: block; letter-spacing: 0.05em; margin-top: -4px; }
+  .logo-img { height: 60px; width: auto; object-fit: contain; }
 
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
@@ -771,13 +768,11 @@
   }
 
   .footer-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: white;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
   }
-  .footer-logo em { font-style: normal; color: var(--red); }
+  .logo-img-footer { height: 70px; width: auto; object-fit: contain; background: white; border-radius: 8px; padding: 4px 8px; }
 
   footer p { font-size: 0.8125rem; }
 
@@ -804,7 +799,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">AKARU<span>Education Consultancy</span></a>
+  <a href="#" class="logo"><img src="photos/Akarui Logo.webp" alt="AKARUI! Education Consultancy (P) Ltd." class="logo-img"></a>
   <ul class="nav-links">
     <li><a href="#destinations">Destinations</a></li>
     <li><a href="#services">Services</a></li>
@@ -1213,7 +1208,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="footer-logo"><em>AKARU!</em> Education Consultancy</a>
+  <a href="#" class="footer-logo"><img src="photos/Akarui Logo.webp" alt="AKARUI! Education Consultancy (P) Ltd. Logo" class="logo-img-footer"></a>
   <ul class="footer-links">
     <li><a href="#destinations">Destinations</a></li>
     <li><a href="#services">Services</a></li>

@@ -148,5 +148,51 @@ function updateActiveNavLink() {
   });
 }
 
+/**
+ * Gallery auto-slider with dot navigation
+ */
+function initGallerySlider() {
+  const slides = document.querySelectorAll('.gallery-slide');
+  const dots = document.querySelectorAll('.gallery-dot');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startTimer() {
+    timer = setInterval(() => goTo(current + 1), 4500);
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopTimer();
+      goTo(i);
+      startTimer();
+    });
+  });
+
+  const section = document.querySelector('.gallery-section');
+  if (section) {
+    section.addEventListener('mouseenter', stopTimer);
+    section.addEventListener('mouseleave', startTimer);
+  }
+
+  startTimer();
+}
+
+document.addEventListener('DOMContentLoaded', initGallerySlider);
+
 // Call on scroll
 window.addEventListener('scroll', updateActiveNavLink);
