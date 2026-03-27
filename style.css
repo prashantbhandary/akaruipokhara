@@ -343,6 +343,7 @@ footer > *:not(.jp-glyph-layer),
   position: relative;
   background: var(--navy);
   overflow: hidden;
+  z-index: 3;
 }
 
 .hero-bg-text {
@@ -452,6 +453,25 @@ footer > *:not(.jp-glyph-layer),
 
 .hero-photo-dot.active {
   width: 22px;
+  background: white;
+}
+
+.hero-brand-visual {
+  top: 50%;
+}
+
+.hero-brand-frame {
+  padding: 1.1rem;
+  border-radius: 30px;
+}
+
+.hero-brand-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 510px;
+  object-fit: contain;
+  border-radius: 20px;
   background: white;
 }
 
