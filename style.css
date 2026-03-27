@@ -264,6 +264,14 @@ footer > *:not(.jp-glyph-layer),
   display: block;
 }
 
+html[lang="ne"] .hero-h1 {
+  line-height: 0.94;
+}
+
+html[lang="ne"] .hero-h1 em {
+  margin-top: 0.08em;
+}
+
 .hero-sub {
   font-size: 1.0625rem;
   color: var(--mid);
