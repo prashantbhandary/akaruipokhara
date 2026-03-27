@@ -165,7 +165,7 @@ nav {
   text-shadow: 0 12px 24px rgba(26,54,93,0.05);
   animation: kanaDrift var(--duration, 14s) ease-in-out infinite;
   animation-delay: var(--delay, 0s);
-  transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg));
+  transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
 }
 
 .kana-float.red {
@@ -304,10 +304,10 @@ nav {
 
 @keyframes kanaDrift {
   0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg));
+    transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
   }
   50% {
-    transform: translate3d(0, -18px, 0) rotate(calc(var(--rotate, 0deg) + 4deg));
+    transform: translate3d(var(--drift-x, 14px), var(--drift-y, -24px), 0) rotate(calc(var(--rotate, 0deg) + 6deg)) scale(1.08);
   }
 }
 
