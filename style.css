@@ -798,11 +798,23 @@ table tbody tr:hover {
   padding: 2rem;
   border: 1px solid rgba(0,0,0,0.05);
   position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+  border-color: var(--red);
 }
 
 .testi-card.featured {
   background: var(--red);
   grid-row: span 1;
+}
+
+.testi-card.featured:hover {
+  box-shadow: 0 16px 40px rgba(220,38,38,0.35);
+  border-color: transparent;
 }
 
 .testi-quote {
