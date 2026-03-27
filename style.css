@@ -141,7 +141,7 @@ nav {
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   padding-top: 68px;
   overflow: hidden;
   position: relative;
@@ -220,7 +220,9 @@ footer > *:not(.jp-glyph-layer),
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 3rem 6rem 8vw;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 6vw;
   position: relative;
   z-index: 2;
 }
