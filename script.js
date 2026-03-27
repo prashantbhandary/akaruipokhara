@@ -1,4 +1,4 @@
-// AKARU! Homepage - JavaScript
+// AKARUI! Homepage - JavaScript
 // Common utilities and event handlers
 
 document.addEventListener('DOMContentLoaded', function() {
