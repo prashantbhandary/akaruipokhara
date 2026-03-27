@@ -1,0 +1,471 @@
+// AKARU! Homepage translations (English, Japanese, Nepali)
+(function () {
+  const STORAGE_KEY = 'akaru_language';
+
+  const translations = {
+    en: {
+      'meta.title': 'AKARUI! Education Consultancy',
+      'nav.destinations': 'Destinations',
+      'nav.services': 'Services',
+      'nav.why': 'Why Us',
+      'nav.stories': 'Stories',
+      'nav.gallery': 'Gallery',
+      'nav.contact': 'Contact',
+      'nav.language': 'Language',
+      'nav.cta': 'Free Counselling →',
+      'nav.call': '📞 Call Us',
+      'hero.tag': '📍 Based in Pokhara, Nepal',
+      'hero.title': 'Your Future is<br><em>Brighter Abroad</em>',
+      'hero.sub': "AKARU! guides students from Nepal toward world-class universities. From counselling to visa — we're with you every step of the journey.",
+      'hero.cta.counselling': 'Get Free Counselling →',
+      'hero.cta.call': '📞 Call Us Now',
+      'hero.cta.explore': 'Explore Destinations',
+      'hero.stats.visa': 'Visa Success Rate',
+      'hero.stats.countries': 'Countries',
+      'hero.stats.students': 'Students Placed',
+      'dest.tag': 'Study Destinations',
+      'dest.title': 'Choose Your<br>Dream City in Japan',
+      'dest.sub': "We have partnerships with top language schools and universities across Japan's most vibrant student hubs, providing you with a high-quality education and an immersive cultural experience.",
+      'why.tag': 'Why AKARU!',
+      'why.title': "We Don't Just<br>Send You — We<br>Prepare You",
+      'services.tag': 'Our Services',
+      'services.title': 'Everything You Need<br>in One Place',
+      'services.sub': 'From your first consultation to landing at your destination university — AKARU! covers it all.',
+      'process.tag': 'How It Works',
+      'process.title': '4 Simple Steps to<br>Your Overseas Education',
+      'testi.tag': 'Student Stories',
+      'testi.title': 'Real Students,<br>Real Success',
+      'gallery.tag': 'Student Gallery',
+      'gallery.title': 'Stories of<br>Success & Dreams',
+      'gallery.sub': 'Every journey starts with a single step. See how our students turned their overseas dreams into reality.',
+      'gallery.stat.students': 'Students Sent Abroad',
+      'gallery.stat.visa': 'Visa Success Rate',
+      'cta.title': 'Ready to Start Your<br><em>International Journey?</em>',
+      'cta.sub': 'Book a free counselling session today — no obligations, just honest guidance.',
+      'cta.book': 'Book Free Session →',
+      'cta.follow': 'Follow us on Facebook',
+      'contact.tag': 'Get in Touch',
+      'contact.title': 'Start Your Journey<br>with AKARU!',
+      'contact.sub': "Our expert counsellors in Pokhara are ready to guide you. Drop by, call us, or fill out the form — we'll get back to you the same day.",
+      'contact.office': 'Office',
+      'contact.phone': 'Phone / WhatsApp',
+      'contact.social': 'Social Media',
+      'social.facebook': '📘 Facebook',
+      'social.instagram': '📸 Instagram',
+      'social.youtube': '▶️ YouTube',
+      'social.tiktok': '🎵 TikTok',
+      'form.title': 'Free Counselling Form',
+      'form.sub': "Fill in your details and we'll reach out within 24 hours.",
+      'form.firstName': 'First Name',
+      'form.lastName': 'Last Name',
+      'form.phone': 'Phone / WhatsApp',
+      'form.email': 'Email Address',
+      'form.city': 'Preferred Study City in Japan',
+      'form.message': 'Your Message (optional)',
+      'form.cityDefault': 'Select a city...',
+      'form.cityTokyo': 'Tokyo - Business, Tech & Fashion',
+      'form.cityKyoto': 'Kyoto - History, Arts & Culture',
+      'form.cityOsaka': 'Osaka - Commerce & Culinary',
+      'form.cityFukuoka': 'Fukuoka - Entrepreneurship & Innovation',
+      'form.cityNagoya': 'Nagoya - Engineering & Manufacturing',
+      'form.citySapporo': 'Sapporo - Nature & Language Immersion',
+      'form.citySendai': 'Sendai - Balance & Education',
+      'form.cityYokohama': 'Yokohama - Harbor City Living',
+      'form.placeholder.firstName': 'Rajesh',
+      'form.placeholder.lastName': 'Thapa',
+      'form.placeholder.phone': '+977 98XXXXXXXX',
+      'form.placeholder.email': 'you@email.com',
+      'form.placeholder.message': 'Tell us about your academic background, goals, or any questions...',
+      'form.submit': 'Submit — Get Free Counselling →',
+      'form.call': '📞 Call Us Now — Instant Help',
+      'footer.destinations': 'Destinations',
+      'footer.services': 'Services',
+      'footer.why': 'Why Us',
+      'footer.contact': 'Contact',
+      'footer.copy': '© 2025 AKARU! Education Consultancy (P) Ltd. · Pokhara, Nepal',
+      'form.status.required': 'Please fill in all required fields.',
+      'form.status.invalidEmail': 'Please enter a valid email address.',
+      'form.status.submitting': 'Submitting your enquiry...',
+      'form.status.success': 'Thank you. Your enquiry has been sent and our team will contact you within 24 hours.',
+      'form.status.error': 'There was an error submitting the form. Please try again.'
+    },
+    ja: {
+      'meta.title': 'AKARUI! 留学コンサルティング',
+      'nav.destinations': '留学先',
+      'nav.services': 'サービス',
+      'nav.why': '選ばれる理由',
+      'nav.stories': '体験談',
+      'nav.gallery': 'ギャラリー',
+      'nav.contact': 'お問い合わせ',
+      'nav.language': '言語',
+      'nav.cta': '無料カウンセリング →',
+      'nav.call': '📞 電話する',
+      'hero.tag': '📍 ネパール・ポカラ拠点',
+      'hero.title': 'あなたの未来は<br><em>海外でもっと輝く</em>',
+      'hero.sub': 'AKARU! はネパールの学生を世界水準の大学へ導きます。カウンセリングからビザ取得まで、すべてのステップを伴走します。',
+      'hero.cta.counselling': '無料カウンセリング →',
+      'hero.cta.call': '📞 今すぐ電話',
+      'hero.cta.explore': '留学都市を見る',
+      'hero.stats.visa': 'ビザ成功率',
+      'hero.stats.countries': '対応国',
+      'hero.stats.students': '送り出した学生',
+      'dest.tag': '留学先',
+      'dest.title': '日本であなたに合う<br>理想の都市を選ぶ',
+      'dest.sub': '日本の主要都市にある提携語学学校・大学ネットワークで、高品質な学びと実践的な留学生活をサポートします。',
+      'why.tag': 'AKARU! が選ばれる理由',
+      'why.title': '送り出すだけでなく<br>徹底的に<br>準備を支援',
+      'services.tag': 'サービス',
+      'services.title': '必要なサポートを<br>ワンストップで',
+      'services.sub': '初回相談から渡航後まで、AKARU! が一貫してサポートします。',
+      'process.tag': 'ご利用の流れ',
+      'process.title': '海外進学までの<br>4ステップ',
+      'testi.tag': '学生の声',
+      'testi.title': '本物の学生が語る<br>成功ストーリー',
+      'gallery.tag': '学生ギャラリー',
+      'gallery.title': '夢をかなえた<br>ストーリー',
+      'gallery.sub': 'すべての挑戦は一歩から始まります。学生たちの留学成功ストーリーをご覧ください。',
+      'gallery.stat.students': '海外進学した学生',
+      'gallery.stat.visa': 'ビザ成功率',
+      'cta.title': '海外進学の一歩を<br><em>今ここから</em>',
+      'cta.sub': 'まずは無料相談。無理な勧誘なしで、あなたに合う進路をご案内します。',
+      'cta.book': '無料相談を予約 →',
+      'cta.follow': 'Facebook をフォロー',
+      'contact.tag': 'お問い合わせ',
+      'contact.title': 'AKARU! と一緒に<br>留学準備を始めよう',
+      'contact.sub': 'ポカラのカウンセラーが丁寧に対応します。来店・電話・フォームのいずれでも、当日中にご連絡します。',
+      'contact.office': 'オフィス',
+      'contact.phone': '電話 / WhatsApp',
+      'contact.social': 'SNS',
+      'social.facebook': '📘 Facebook',
+      'social.instagram': '📸 Instagram',
+      'social.youtube': '▶️ YouTube',
+      'social.tiktok': '🎵 TikTok',
+      'form.title': '無料カウンセリング申込',
+      'form.sub': '必要事項をご入力ください。24時間以内にご連絡します。',
+      'form.firstName': '名',
+      'form.lastName': '姓',
+      'form.phone': '電話 / WhatsApp',
+      'form.email': 'メールアドレス',
+      'form.city': '希望する日本の都市',
+      'form.message': 'メッセージ（任意）',
+      'form.cityDefault': '都市を選択してください...',
+      'form.cityTokyo': '東京 - ビジネス・IT・ファッション',
+      'form.cityKyoto': '京都 - 歴史・芸術・文化',
+      'form.cityOsaka': '大阪 - 商業・食文化',
+      'form.cityFukuoka': '福岡 - 起業・イノベーション',
+      'form.cityNagoya': '名古屋 - 工学・製造',
+      'form.citySapporo': '札幌 - 自然・語学没入',
+      'form.citySendai': '仙台 - バランスの良い学習環境',
+      'form.cityYokohama': '横浜 - 港町ライフ',
+      'form.placeholder.firstName': '太郎',
+      'form.placeholder.lastName': '山田',
+      'form.placeholder.phone': '+977 98XXXXXXXX',
+      'form.placeholder.email': 'you@email.com',
+      'form.placeholder.message': '学歴や目標、質問などをご記入ください。',
+      'form.submit': '送信して無料相談 →',
+      'form.call': '📞 今すぐ電話で相談',
+      'footer.destinations': '留学先',
+      'footer.services': 'サービス',
+      'footer.why': '選ばれる理由',
+      'footer.contact': 'お問い合わせ',
+      'footer.copy': '© 2025 AKARU! Education Consultancy (P) Ltd. · ネパール・ポカラ',
+      'form.status.required': '必須項目を入力してください。',
+      'form.status.invalidEmail': '有効なメールアドレスを入力してください。',
+      'form.status.submitting': '送信しています...',
+      'form.status.success': '送信ありがとうございました。24時間以内に担当者よりご連絡します。',
+      'form.status.error': '送信中にエラーが発生しました。もう一度お試しください。'
+    },
+    ne: {
+      'meta.title': 'AKARUI! शिक्षा परामर्श',
+      'nav.destinations': 'गन्तव्य',
+      'nav.services': 'सेवाहरू',
+      'nav.why': 'किन हामी',
+      'nav.stories': 'कथाहरू',
+      'nav.gallery': 'ग्यालरी',
+      'nav.contact': 'सम्पर्क',
+      'nav.language': 'भाषा',
+      'nav.cta': 'निःशुल्क काउन्सिलिङ →',
+      'nav.call': '📞 फोन गर्नुहोस्',
+      'hero.tag': '📍 पोखरा, नेपालबाट सेवा',
+      'hero.title': 'तपाईंको भविष्य<br><em>विदेशमा अझ उज्यालो</em>',
+      'hero.sub': 'AKARU! ले नेपाली विद्यार्थीलाई विश्वस्तरीय विश्वविद्यालयतर्फ मार्गदर्शन गर्छ। काउन्सिलिङदेखि भिसासम्म, हामी प्रत्येक चरणमा साथ हुन्छौं।',
+      'hero.cta.counselling': 'निःशुल्क काउन्सिलिङ →',
+      'hero.cta.call': '📞 अहिले फोन गर्नुहोस्',
+      'hero.cta.explore': 'गन्तव्य हेर्नुहोस्',
+      'hero.stats.visa': 'भिसा सफलता दर',
+      'hero.stats.countries': 'देशहरू',
+      'hero.stats.students': 'विद्यार्थी पठाइएका',
+      'dest.tag': 'अध्ययन गन्तव्य',
+      'dest.title': 'जापानमा तपाईंको<br>सपनाको सहर छान्नुहोस्',
+      'dest.sub': 'जापानका प्रमुख विद्यार्थी सहरहरूमा रहेका उत्कृष्ट भाषा विद्यालय र विश्वविद्यालयसँगको साझेदारीमार्फत गुणस्तरीय शिक्षा र समृद्ध सांस्कृतिक अनुभव प्रदान गर्छौं।',
+      'why.tag': 'किन AKARU!',
+      'why.title': 'हामी तपाईंलाई<br>केवल पठाउँदैनौं —<br>तयार पनि पार्छौं',
+      'services.tag': 'हाम्रा सेवाहरू',
+      'services.title': 'तपाईंलाई चाहिने सबै<br>एकै ठाउँमा',
+      'services.sub': 'पहिलो परामर्शदेखि गन्तव्य विश्वविद्यालय पुग्दासम्म — AKARU! ले सम्पूर्ण साथ दिन्छ।',
+      'process.tag': 'प्रक्रिया',
+      'process.title': 'विदेश अध्ययनका लागि<br>४ सजिला चरण',
+      'testi.tag': 'विद्यार्थी कथाहरू',
+      'testi.title': 'वास्तविक विद्यार्थी,<br>वास्तविक सफलता',
+      'gallery.tag': 'विद्यार्थी ग्यालरी',
+      'gallery.title': 'सफलता र सपनाका<br>कथाहरू',
+      'gallery.sub': 'हरेक यात्रा एउटा कदमबाट सुरु हुन्छ। हाम्रा विद्यार्थीले कसरी विदेश पढाइको सपना पुरा गरे, हेर्नुहोस्।',
+      'gallery.stat.students': 'विदेश पठाइएका विद्यार्थी',
+      'gallery.stat.visa': 'भिसा सफलता दर',
+      'cta.title': 'अन्तर्राष्ट्रिय यात्राको<br><em>सुरुवात गर्न तयार?</em>',
+      'cta.sub': 'आजै निःशुल्क काउन्सिलिङ बुक गर्नुहोस् — कुनै दबाब छैन, इमानदार मार्गदर्शन मात्र।',
+      'cta.book': 'निःशुल्क सेसन बुक गर्नुहोस् →',
+      'cta.follow': 'Facebook मा हामीसँग जोडिनुहोस्',
+      'contact.tag': 'सम्पर्क गर्नुहोस्',
+      'contact.title': 'AKARU! सँगै<br>तपाईंको यात्रा सुरु गरौं',
+      'contact.sub': 'पोखरास्थित हाम्रो अनुभवी काउन्सिलर टोली मद्दत गर्न तयार छ। कार्यालयमा आउनुहोस्, फोन गर्नुहोस् वा फारम भर्नुहोस् — सोही दिन सम्पर्क गर्छौं।',
+      'contact.office': 'कार्यालय',
+      'contact.phone': 'फोन / WhatsApp',
+      'contact.social': 'सामाजिक सञ्जाल',
+      'social.facebook': '📘 Facebook',
+      'social.instagram': '📸 Instagram',
+      'social.youtube': '▶️ YouTube',
+      'social.tiktok': '🎵 TikTok',
+      'form.title': 'निःशुल्क काउन्सिलिङ फारम',
+      'form.sub': 'तपाईंका विवरण भर्नुहोस्, हामी २४ घण्टाभित्र सम्पर्क गर्छौं।',
+      'form.firstName': 'पहिलो नाम',
+      'form.lastName': 'थर',
+      'form.phone': 'फोन / WhatsApp',
+      'form.email': 'इमेल ठेगाना',
+      'form.city': 'जापानमा रुचाइएको अध्ययन सहर',
+      'form.message': 'तपाईंको सन्देश (वैकल्पिक)',
+      'form.cityDefault': 'सहर छान्नुहोस्...',
+      'form.cityTokyo': 'टोकियो - व्यवसाय, टेक र फेसन',
+      'form.cityKyoto': 'क्योटो - इतिहास, कला र संस्कृति',
+      'form.cityOsaka': 'ओसाका - व्यापार र पाककला',
+      'form.cityFukuoka': 'फुकुओका - उद्यमशीलता र नवप्रवर्तन',
+      'form.cityNagoya': 'नागोया - इन्जिनियरिङ र उत्पादन',
+      'form.citySapporo': 'साप्पोरो - प्रकृति र भाषा इमर्सन',
+      'form.citySendai': 'सेन्दाइ - सन्तुलित शिक्षा वातावरण',
+      'form.cityYokohama': 'योकोहामा - बन्दरगाह सहर जीवन',
+      'form.placeholder.firstName': 'राजेश',
+      'form.placeholder.lastName': 'थापा',
+      'form.placeholder.phone': '+977 98XXXXXXXX',
+      'form.placeholder.email': 'you@email.com',
+      'form.placeholder.message': 'तपाईंको शैक्षिक पृष्ठभूमि, लक्ष्य वा प्रश्न लेख्नुहोस्...',
+      'form.submit': 'पेश गर्नुहोस् — निःशुल्क काउन्सिलिङ →',
+      'form.call': '📞 अहिले नै फोन गर्नुहोस् — तुरुन्त सहयोग',
+      'footer.destinations': 'गन्तव्य',
+      'footer.services': 'सेवाहरू',
+      'footer.why': 'किन हामी',
+      'footer.contact': 'सम्पर्क',
+      'footer.copy': '© 2025 AKARU! Education Consultancy (P) Ltd. · पोखरा, नेपाल',
+      'form.status.required': 'कृपया सबै आवश्यक विवरण भर्नुहोस्।',
+      'form.status.invalidEmail': 'कृपया मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।',
+      'form.status.submitting': 'तपाईंको फारम पठाइँदैछ...',
+      'form.status.success': 'धन्यवाद। तपाईंको फारम पठाइएको छ र हाम्रो टोलीले २४ घण्टाभित्र सम्पर्क गर्नेछ।',
+      'form.status.error': 'फारम पठाउँदा समस्या भयो। कृपया फेरि प्रयास गर्नुहोस्।'
+    }
+  };
+
+  let currentLanguage = 'en';
+
+  const bindings = [
+    { selector: 'title', key: 'meta.title' },
+    { selector: '.sr-only', key: 'nav.language' },
+    { selector: '.nav-links li:nth-child(1) a', key: 'nav.destinations' },
+    { selector: '.nav-links li:nth-child(2) a', key: 'nav.services' },
+    { selector: '.nav-links li:nth-child(3) a', key: 'nav.why' },
+    { selector: '.nav-links li:nth-child(4) a', key: 'nav.stories' },
+    { selector: '.nav-links li:nth-child(5) a', key: 'nav.gallery' },
+    { selector: '.nav-links li:nth-child(6) a', key: 'nav.contact' },
+    { selector: '.nav-cta', key: 'nav.cta' },
+    { selector: '.nav-call', key: 'nav.call' },
+    { selector: '.hero-tag', key: 'hero.tag' },
+    { selector: '.hero-h1', key: 'hero.title', html: true },
+    { selector: '.hero-sub', key: 'hero.sub' },
+    { selector: '.hero-actions .btn-primary', key: 'hero.cta.counselling' },
+    { selector: '.hero-actions .btn-call', key: 'hero.cta.call' },
+    { selector: '.hero-actions .btn-outline', key: 'hero.cta.explore' },
+    { selector: '.hero-stats > div:nth-child(1) .stat-label', key: 'hero.stats.visa' },
+    { selector: '.hero-stats > div:nth-child(2) .stat-label', key: 'hero.stats.countries' },
+    { selector: '.hero-stats > div:nth-child(3) .stat-label', key: 'hero.stats.students' },
+    { selector: '#destinations .section-tag', key: 'dest.tag' },
+    { selector: '#destinations .section-title', key: 'dest.title', html: true },
+    { selector: '#destinations .section-sub', key: 'dest.sub' },
+    { selector: '#why .section-tag', key: 'why.tag' },
+    { selector: '#why .section-title', key: 'why.title', html: true },
+    { selector: '#services .section-tag', key: 'services.tag' },
+    { selector: '#services .section-title', key: 'services.title', html: true },
+    { selector: '#services .section-sub', key: 'services.sub' },
+    { selector: '#testimonials .section-tag', key: 'testi.tag' },
+    { selector: '#testimonials .section-title', key: 'testi.title', html: true },
+    { selector: '#gallery .section-tag', key: 'gallery.tag' },
+    { selector: '#gallery .section-title', key: 'gallery.title', html: true },
+    { selector: '#gallery .section-sub', key: 'gallery.sub' },
+    { selector: '#gallery .gallery-stat:nth-child(1) .gallery-stat-label', key: 'gallery.stat.students' },
+    { selector: '#gallery .gallery-stat:nth-child(2) .gallery-stat-label', key: 'gallery.stat.visa' },
+    { selector: '.cta-title', key: 'cta.title', html: true },
+    { selector: '.cta-sub', key: 'cta.sub' },
+    { selector: '.cta-section .btn-primary', key: 'cta.book' },
+    { selector: '.cta-section .btn-outline', key: 'cta.follow' },
+    { selector: '#contact .section-tag', key: 'contact.tag' },
+    { selector: '#contact .section-title', key: 'contact.title', html: true },
+    { selector: '#contact .contact-info > p', key: 'contact.sub' },
+    { selector: '#contact .info-item:nth-child(2) .info-label', key: 'contact.office' },
+    { selector: '#contact .info-item:nth-child(3) .info-label', key: 'contact.phone' },
+    { selector: '#contact .info-item:nth-child(4) .info-label', key: 'contact.social' },
+    { selector: '#contact .social-btn:nth-child(1)', key: 'social.facebook' },
+    { selector: '#contact .social-btn:nth-child(2)', key: 'social.instagram' },
+    { selector: '#contact .social-btn:nth-child(3)', key: 'social.youtube' },
+    { selector: '#contact .social-btn:nth-child(4)', key: 'social.tiktok' },
+    { selector: '.contact-form h3', key: 'form.title' },
+    { selector: '.contact-form h3 + p', key: 'form.sub' },
+    { selector: '.contact-form button.submit-btn', key: 'form.submit' },
+    { selector: '.contact-form .call-now-btn', key: 'form.call' },
+    { selector: 'footer .footer-links li:nth-child(1) a', key: 'footer.destinations' },
+    { selector: 'footer .footer-links li:nth-child(2) a', key: 'footer.services' },
+    { selector: 'footer .footer-links li:nth-child(3) a', key: 'footer.why' },
+    { selector: 'footer .footer-links li:nth-child(4) a', key: 'footer.contact' },
+    { selector: 'footer p', key: 'footer.copy' }
+  ];
+
+  function t(key) {
+    return (translations[currentLanguage] && translations[currentLanguage][key]) || translations.en[key] || key;
+  }
+
+  function applyBinding(binding) {
+    const element = document.querySelector(binding.selector);
+    if (!element) return;
+
+    if (binding.html) {
+      element.innerHTML = t(binding.key);
+    } else {
+      element.textContent = t(binding.key);
+    }
+  }
+
+  function translateProcessSection() {
+    const processSteps = document.querySelector('.process-steps');
+    if (!processSteps) return;
+
+    const processSection = processSteps.closest('section');
+    if (!processSection) return;
+
+    const tag = processSection.querySelector('.section-tag');
+    const title = processSection.querySelector('.section-title');
+
+    if (tag) {
+      tag.textContent = t('process.tag');
+    }
+    if (title) {
+      title.innerHTML = t('process.title');
+    }
+  }
+
+  function translateFormLabelsAndPlaceholders() {
+    const firstNameInput = document.querySelector('input[name="firstName"]');
+    const lastNameInput = document.querySelector('input[name="lastName"]');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const citySelect = document.querySelector('select[name="city"]');
+    const messageInput = document.querySelector('textarea[name="message"]');
+
+    if (firstNameInput) {
+      const label = firstNameInput.closest('.form-group')?.querySelector('label');
+      if (label) label.textContent = t('form.firstName');
+      firstNameInput.placeholder = t('form.placeholder.firstName');
+    }
+
+    if (lastNameInput) {
+      const label = lastNameInput.closest('.form-group')?.querySelector('label');
+      if (label) label.textContent = t('form.lastName');
+      lastNameInput.placeholder = t('form.placeholder.lastName');
+    }
+
+    if (phoneInput) {
+      const label = phoneInput.closest('.form-group')?.querySelector('label');
+      if (label) label.textContent = t('form.phone');
+      phoneInput.placeholder = t('form.placeholder.phone');
+    }
+
+    if (emailInput) {
+      const label = emailInput.closest('.form-group')?.querySelector('label');
+      if (label) label.textContent = t('form.email');
+      emailInput.placeholder = t('form.placeholder.email');
+    }
+
+    if (messageInput) {
+      const label = messageInput.closest('.form-group')?.querySelector('label');
+      if (label) label.textContent = t('form.message');
+      messageInput.placeholder = t('form.placeholder.message');
+    }
+
+    if (citySelect) {
+      const label = citySelect.closest('.form-group')?.querySelector('label');
+      if (label) label.textContent = t('form.city');
+
+      const cityKeyMap = {
+        '': 'form.cityDefault',
+        'Tokyo': 'form.cityTokyo',
+        'Kyoto': 'form.cityKyoto',
+        'Osaka': 'form.cityOsaka',
+        'Fukuoka': 'form.cityFukuoka',
+        'Nagoya': 'form.cityNagoya',
+        'Sapporo': 'form.citySapporo',
+        'Sendai': 'form.citySendai',
+        'Yokohama': 'form.cityYokohama'
+      };
+
+      citySelect.querySelectorAll('option').forEach(function (option) {
+        const key = cityKeyMap[option.value];
+        if (key) {
+          option.textContent = t(key);
+        }
+      });
+    }
+  }
+
+  function applyTranslations(lang) {
+    if (!translations[lang]) {
+      lang = 'en';
+    }
+
+    currentLanguage = lang;
+    document.documentElement.lang = lang;
+
+    bindings.forEach(applyBinding);
+    translateProcessSection();
+    translateFormLabelsAndPlaceholders();
+
+    const switcher = document.getElementById('languageSwitcher');
+    if (switcher && switcher.value !== lang) {
+      switcher.value = lang;
+    }
+  }
+
+  function setLanguage(lang, persist) {
+    applyTranslations(lang);
+    if (persist) {
+      localStorage.setItem(STORAGE_KEY, currentLanguage);
+    }
+  }
+
+  function initializeI18n() {
+    const switcher = document.getElementById('languageSwitcher');
+    const savedLanguage = localStorage.getItem(STORAGE_KEY) || 'en';
+
+    applyTranslations(savedLanguage);
+
+    if (switcher) {
+      switcher.addEventListener('change', function (event) {
+        setLanguage(event.target.value, true);
+      });
+    }
+  }
+
+  window.AkaruiI18n = {
+    t,
+    setLanguage,
+    getLanguage: function () {
+      return currentLanguage;
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', initializeI18n);
+})();

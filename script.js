@@ -2,14 +2,7 @@
 // Common utilities and event handlers
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Form submission handler
-  const submitBtn = document.querySelector('.submit-btn');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      handleFormSubmit();
-    });
-  }
+  initializeContactForm();
 
   // Mobile navigation toggle (for future mobile menu implementation)
   initializeNavigation();
@@ -18,61 +11,100 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeSmoothScroll();
 });
 
+function translateText(key, fallback) {
+  const i18n = window.AkaruiI18n;
+  if (i18n && typeof i18n.t === 'function') {
+    return i18n.t(key);
+  }
+  return fallback;
+}
+
 /**
  * Handle form submission with Formspree
  */
-function handleFormSubmit() {
+function initializeContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
+
+  form.addEventListener('submit', handleFormSubmit);
+}
+
+async function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const submitBtn = form.querySelector('.submit-btn');
+  const status = form.querySelector('.form-status');
 
   const firstName = form.querySelector('input[name="firstName"]').value.trim();
   const lastName = form.querySelector('input[name="lastName"]').value.trim();
   const phone = form.querySelector('input[name="phone"]').value.trim();
   const email = form.querySelector('input[name="email"]').value.trim();
-  const city = form.querySelector('select[name="city"]').value;
-  const message = form.querySelector('textarea[name="message"]')?.value.trim() || '';
 
-  // Basic validation
   if (!firstName || !lastName || !phone || !email) {
-    alert('Please fill in all required fields');
+    updateFormStatus(status, translateText('form.status.required', 'Please fill in all required fields.'), 'error');
+    form.reportValidity();
     return;
   }
 
-  // Email validation
   if (!validateEmail(email)) {
-    alert('Please enter a valid email address');
+    updateFormStatus(status, translateText('form.status.invalidEmail', 'Please enter a valid email address.'), 'error');
     return;
   }
 
-  // Prepare form data for Formspree
-  const formData = new FormData();
-  formData.append('firstName', firstName);
-  formData.append('lastName', lastName);
-  formData.append('phone', phone);
-  formData.append('email', email);
-  formData.append('city', city);
-  formData.append('message', message);
+  const formData = new FormData(form);
+  updateFormStatus(status, translateText('form.status.submitting', 'Submitting your enquiry...'), 'pending');
 
-  // Submit to Formspree
-  fetch('https://formspree.io/f/xqegagrl', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => {
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.classList.add('is-loading');
+  }
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method || 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
     if (response.ok) {
-      alert('Thank you for your interest! We will contact you within 24 hours.');
       form.reset();
-    } else {
-      alert('There was an error submitting the form. Please try again.');
+      updateFormStatus(status, translateText('form.status.success', 'Thank you. Your enquiry has been sent and our team will contact you within 24 hours.'), 'success');
+      return;
     }
-  })
-  .catch(error => {
+
+    const errorData = await response.json().catch(() => null);
+    const message = errorData && Array.isArray(errorData.errors) && errorData.errors.length
+      ? errorData.errors.map((error) => error.message).join(' ')
+      : translateText('form.status.error', 'There was an error submitting the form. Please try again.');
+
+    updateFormStatus(status, message, 'error');
+  } catch (error) {
     console.error('Form submission error:', error);
-    alert('There was an error submitting the form. Please try again.');
-  });
+    updateFormStatus(status, translateText('form.status.error', 'There was an error submitting the form. Please try again.'), 'error');
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('is-loading');
+    }
+  }
+}
+
+function updateFormStatus(statusElement, message, state) {
+  if (!statusElement) return;
+
+  statusElement.textContent = message;
+  statusElement.classList.remove('is-error', 'is-success', 'is-pending');
+
+  if (state === 'error') {
+    statusElement.classList.add('is-error');
+  } else if (state === 'success') {
+    statusElement.classList.add('is-success');
+  } else if (state === 'pending') {
+    statusElement.classList.add('is-pending');
+  }
 }
 
 /**
