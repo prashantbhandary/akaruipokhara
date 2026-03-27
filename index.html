@@ -12,7 +12,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="../akaruipokhara/photos/Akarui Logo.webp" class="logo"><img src="../akaruipokhara/photos/Akarui Logo.webp" alt="AKARUI!" class="logo-img"></a>
+  <a href="#" class="logo"><img src="photos/Akarui Logo.webp" alt="AKARUI! Education Consultancy" class="logo-img"></a>
   <ul class="nav-links">
     <li><a href="#destinations">Destinations</a></li>
     <li><a href="#services">Services</a></li>
@@ -89,41 +89,6 @@
     <span>Yokohama</span>
   </div>
 </div>
-
-<!-- TOP DESTINATIONS OVERVIEW -->
-<section style="padding: 6rem 8vw; background: var(--white);">
-  <div style="text-align: center; margin-bottom: 3rem;">
-    <span class="section-tag">Study Destinations</span>
-    <h2 class="section-title">We Guide Students to<br>Top Countries Worldwide</h2>
-    <p class="section-sub" style="margin: 1.5rem auto 0; max-width: 600px;">AKARUI! has established partnerships across the globe. Whether you're aiming for Japan's immersive experience or seeking opportunities in other major study destinations, we've got you covered.</p>
-  </div>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
-    <div style="background: var(--off-white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; cursor: pointer;" class="top-destination-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🇦🇺</div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 700; color: var(--black);">Australia</div>
-    </div>
-    <div style="background: var(--off-white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; cursor: pointer;" class="top-destination-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🇬🇧</div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 700; color: var(--black);">UK</div>
-    </div>
-    <div style="background: var(--off-white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; cursor: pointer;" class="top-destination-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🇨🇦</div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 700; color: var(--black);">Canada</div>
-    </div>
-    <div style="background: var(--off-white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; cursor: pointer;" class="top-destination-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🇺🇸</div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 700; color: var(--black);">USA</div>
-    </div>
-    <div style="background: var(--red); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; cursor: pointer;" class="top-destination-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🇯🇵</div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 700; color: white;">Japan</div>
-    </div>
-    <div style="background: var(--off-white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; cursor: pointer;" class="top-destination-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🇳🇿</div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 700; color: var(--black);">NZ</div>
-    </div>
-  </div>
-</section>
 
 <!-- DESTINATIONS -->
 <section class="destinations-section" id="destinations">
@@ -464,49 +429,48 @@
       </div>
     </div>
 
-    <div class="contact-form">
+    <form class="contact-form" action="https://formspree.io/f/xqegagrl" method="POST">
       <h3 style="font-family:'Montserrat',sans-serif; font-size:1.375rem; font-weight:700; margin-bottom:0.25rem; color:var(--black);">Free Counselling Form</h3>
       <p style="font-size:0.875rem; color:var(--mid); margin-bottom:1.75rem;">Fill in your details and we'll reach out within 24 hours.</p>
 
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" placeholder="Rajesh">
+          <input type="text" name="firstName" placeholder="Rajesh" required>
         </div>
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" placeholder="Thapa">
+          <input type="text" name="lastName" placeholder="Thapa" required>
         </div>
       </div>
       <div class="form-group">
         <label>Phone / WhatsApp</label>
-        <input type="tel" placeholder="+977 98XXXXXXXX">
+        <input type="tel" name="phone" placeholder="+977 98XXXXXXXX" required>
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" placeholder="you@email.com">
+        <input type="email" name="email" placeholder="you@email.com" required>
       </div>
       <div class="form-group">
-        <label>Preferred Destination</label>
-        <select>
-          <option>Select a country...</option>
-          <option>Australia</option>
-          <option>United Kingdom</option>
-          <option>Canada</option>
-          <option>USA</option>
-          <option>Japan</option>
-          <option>New Zealand</option>
-          <option>Germany</option>
-          <option>South Korea</option>
-          <option>Other</option>
+        <label>Preferred Study City in Japan</label>
+        <select name="city">
+          <option value="">Select a city...</option>
+          <option value="Tokyo">Tokyo - Business, Tech & Fashion</option>
+          <option value="Kyoto">Kyoto - History, Arts & Culture</option>
+          <option value="Osaka">Osaka - Commerce & Culinary</option>
+          <option value="Fukuoka">Fukuoka - Entrepreneurship & Innovation</option>
+          <option value="Nagoya">Nagoya - Engineering & Manufacturing</option>
+          <option value="Sapporo">Sapporo - Nature & Language Immersion</option>
+          <option value="Sendai">Sendai - Balance & Education</option>
+          <option value="Yokohama">Yokohama - Harbor City Living</option>
         </select>
       </div>
       <div class="form-group">
         <label>Your Message (optional)</label>
-        <textarea placeholder="Tell us about your academic background, goals, or any questions..."></textarea>
+        <textarea name="message" placeholder="Tell us about your academic background, goals, or any questions..."></textarea>
       </div>
-      <button class="submit-btn">Submit — Get Free Counselling →</button>
-    </div>
+      <button type="submit" class="submit-btn">Submit — Get Free Counselling →</button>
+    </form>
   </div>
 </section>
 
