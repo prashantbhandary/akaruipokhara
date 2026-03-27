@@ -265,11 +265,11 @@ footer > *:not(.jp-glyph-layer),
 }
 
 html[lang="ne"] .hero-h1 {
-  line-height: 0.94;
+  line-height: 1.12;
 }
 
 html[lang="ne"] .hero-h1 em {
-  margin-top: 0.08em;
+  margin-top: 0.16em;
 }
 
 .hero-sub {
