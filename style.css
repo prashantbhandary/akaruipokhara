@@ -1,20 +1,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --red: #D92B2B;
-  --red-dark: #A31F1F;
+  --red: #E31E24;
+  --red-dark: #B41919;
   --red-light: #FFEEEE;
-  --black: #111111;
+  --navy: #1A365D;
+  --black: #2D3748;
   --off-white: #F7F4EF;
   --mid: #666055;
   --white: #ffffff;
-  --accent: #1A1A2E;
+  --accent: #1A365D;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: var(--white);
   color: var(--black);
   overflow-x: hidden;
@@ -32,14 +33,18 @@ nav {
 }
 
 .logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
   color: var(--red);
   letter-spacing: -0.5px;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
-.logo span { color: var(--black); font-size: 0.7em; font-weight: 400; display: block; letter-spacing: 0.05em; margin-top: -4px; }
+.logo span:first-of-type { color: var(--red); font-size: 1em; font-weight: 800; }
+.logo span:not(:first-of-type) { color: var(--navy); font-size: 0.35em; font-weight: 600; display: block; letter-spacing: 0.05em; margin-top: 2px; font-family: 'Open Sans', sans-serif; }
 
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
@@ -98,7 +103,7 @@ nav {
 }
 
 .hero-h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: clamp(2.8rem, 5vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
@@ -156,7 +161,7 @@ nav {
 }
 
 .stat-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.875rem;
   font-weight: 700;
   color: var(--black);
@@ -174,7 +179,7 @@ nav {
 
 .hero-bg-text {
   position: absolute;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 22vw;
   font-weight: 800;
   color: rgba(217,43,43,0.05);
@@ -201,7 +206,7 @@ nav {
 }
 
 .hero-card-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
@@ -267,7 +272,7 @@ nav {
 }
 
 .marquee-track span {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -300,7 +305,7 @@ section { padding: 6rem 8vw; }
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: clamp(2rem, 3vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -358,7 +363,7 @@ section { padding: 6rem 8vw; }
 .country-card > * { position: relative; z-index: 1; }
 
 .country-flag { font-size: 2.5rem; display: block; margin-bottom: 1rem; transition: transform 0.3s; }
-.country-name { font-family: 'Syne', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; transition: color 0.3s; }
+.country-name { font-family: 'Montserrat', 'Roboto', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; transition: color 0.3s; }
 .country-meta { font-size: 0.8rem; color: var(--mid); transition: color 0.3s; }
 
 /* ─── WHY US ─── */
@@ -377,7 +382,7 @@ section { padding: 6rem 8vw; }
 }
 
 .why-big-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 6rem;
   font-weight: 800;
   color: var(--red);
@@ -407,7 +412,7 @@ section { padding: 6rem 8vw; }
 }
 
 .why-mini-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--black);
@@ -481,7 +486,7 @@ section { padding: 6rem 8vw; }
 }
 
 .service-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.0625rem;
   font-weight: 700;
   color: white;
@@ -524,7 +529,7 @@ section { padding: 6rem 8vw; }
   border: 2px solid var(--red);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--red);
@@ -533,7 +538,7 @@ section { padding: 6rem 8vw; }
 }
 
 .step-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--black);
@@ -570,7 +575,7 @@ section { padding: 6rem 8vw; }
   color: var(--red);
   line-height: 0.8;
   margin-bottom: 1rem;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
 }
 
 .testi-card.featured .testi-quote { color: rgba(255,255,255,0.4); }
@@ -592,7 +597,7 @@ section { padding: 6rem 8vw; }
   width: 40px; height: 40px; border-radius: 50%;
   background: var(--red-light);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 0.875rem;
   color: var(--red);
@@ -624,7 +629,7 @@ section { padding: 6rem 8vw; }
 }
 
 .cta-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 800;
   color: white;
@@ -701,7 +706,7 @@ section { padding: 6rem 8vw; }
 .submit-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
 
 .contact-info h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--black);
@@ -763,7 +768,7 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
   font-size: 1.25rem;
   font-weight: 800;
   color: white;
