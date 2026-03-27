@@ -372,6 +372,19 @@ section { padding: 6rem 8vw; }
 .country-name { font-family: 'Montserrat', 'Roboto', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; transition: color 0.3s; }
 .country-meta { font-size: 0.8rem; color: var(--mid); transition: color 0.3s; }
 
+/* ─── TOP DESTINATIONS ─── */
+.top-destination-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.top-destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+.top-destination-card:hover div[style*="font-size: 3rem"] {
+  transform: scale(1.15);
+  transition: transform 0.3s;
+}
+
 /* ─── WHY US ─── */
 .why-section {
   display: grid;
