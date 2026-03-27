@@ -266,9 +266,15 @@ document.addEventListener('DOMContentLoaded', initGallerySlider);
  * Hero reel auto-slider
  */
 function initHeroReel() {
-  const slides = document.querySelectorAll('.hero-reel-slide');
-  const dots = document.querySelectorAll('.reel-dot');
-  if (!slides.length) return;
+  const photoSlides = document.querySelectorAll('.hero-photo-slide');
+  const photoDots = document.querySelectorAll('.hero-photo-dot');
+  const reelSlides = document.querySelectorAll('.hero-reel-slide');
+  const reelDots = document.querySelectorAll('.reel-dot');
+
+  const isPhotoFrame = photoSlides.length && photoDots.length;
+  const slides = isPhotoFrame ? photoSlides : reelSlides;
+  const dots = isPhotoFrame ? photoDots : reelDots;
+  if (!slides.length || !dots.length) return;
 
   let current = 0;
   let timer;
@@ -282,7 +288,7 @@ function initHeroReel() {
   }
 
   function startTimer() {
-    timer = setInterval(() => goTo(current + 1), 5000);
+    timer = setInterval(() => goTo(current + 1), isPhotoFrame ? 3800 : 5000);
   }
 
   function stopTimer() {
@@ -297,10 +303,10 @@ function initHeroReel() {
     });
   });
 
-  const reel = document.querySelector('.hero-right');
-  if (reel) {
-    reel.addEventListener('mouseenter', stopTimer);
-    reel.addEventListener('mouseleave', startTimer);
+  const sliderSurface = document.querySelector(isPhotoFrame ? '.hero-photo-frame' : '.hero-right');
+  if (sliderSurface) {
+    sliderSurface.addEventListener('mouseenter', stopTimer);
+    sliderSurface.addEventListener('mouseleave', startTimer);
   }
 
   startTimer();
