@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Admin | AKARUI!</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="galleryadmin.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <img src="photos/Akarui/akaruilogobg.png" alt="AKARUI!" class="login-logo-img">
+    </div>
+    <h1 class="login-title">Gallery Admin</h1>
+    <p class="login-sub">Sign in to manage gallery photos & sections</p>
+    <form id="loginForm" autocomplete="off">
+      <div class="input-group">
+        <label for="adminUser">Username</label>
+        <input type="text" id="adminUser" placeholder="Enter username" required>
+      </div>
+      <div class="input-group">
+        <label for="adminPass">Password</label>
+        <input type="password" id="adminPass" placeholder="Enter password" required>
+      </div>
+      <div id="loginError" class="login-error" hidden>Invalid username or password.</div>
+      <button type="submit" class="btn-login">Sign In</button>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN PANEL (hidden until login) -->
+<div id="adminPanel" class="admin-panel" hidden>
+
+  <!-- TOP BAR -->
+  <header class="admin-header">
+    <div class="admin-header-left">
+      <img src="photos/Akarui/akaruilogobg.png" alt="AKARUI!" class="admin-logo">
+      <h1>Gallery Admin</h1>
+    </div>
+    <div class="admin-header-right">
+      <a href="gallery.html" class="btn-view-gallery" target="_blank">View Gallery ↗</a>
+      <button id="logoutBtn" class="btn-logout">Logout</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+
+    <!-- ADD SECTION -->
+    <div class="admin-card">
+      <h2>Create New Section</h2>
+      <div class="form-row">
+        <div class="input-group">
+          <label for="sectionName">Section Name</label>
+          <input type="text" id="sectionName" placeholder="e.g. COE April 2026">
+        </div>
+        <div class="input-group">
+          <label for="sectionType">Type</label>
+          <select id="sectionType">
+            <option value="coe">COE Document</option>
+            <option value="activity">Activity / Event</option>
+            <option value="achievement">Achievement</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button id="addSectionBtn" class="btn-primary">+ Add Section</button>
+      </div>
+    </div>
+
+    <!-- SECTIONS LIST -->
+    <div id="sectionsContainer" class="sections-container">
+      <!-- Sections rendered by JS -->
+    </div>
+
+    <!-- DATA MANAGEMENT -->
+    <div class="admin-card data-mgmt">
+      <h2>Data Management</h2>
+      <p class="data-mgmt-info">Export your gallery data as a backup, or import from a previous export.</p>
+      <div class="data-mgmt-actions">
+        <button id="exportBtn" class="btn-secondary">📥 Export Data</button>
+        <button id="importBtn" class="btn-secondary">📤 Import Data</button>
+        <input type="file" id="importFile" accept=".json" hidden>
+        <button id="clearAllBtn" class="btn-danger">🗑 Clear All Data</button>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- UPLOAD MODAL -->
+<div id="uploadModal" class="modal-overlay" hidden>
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Upload Photos</h3>
+      <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p class="upload-section-name" id="uploadSectionLabel"></p>
+
+      <!-- Tag & Description -->
+      <div class="input-group">
+        <label for="photoTag">Tag</label>
+        <input type="text" id="photoTag" placeholder="e.g. Batch 2026, Visa Approved, Orientation">
+      </div>
+      <div class="input-group">
+        <label for="photoDesc">Description</label>
+        <textarea id="photoDesc" rows="3" placeholder="Add a caption or description for these photos..."></textarea>
+      </div>
+
+      <div class="upload-drop-zone" id="dropZone">
+        <div class="drop-icon">📷</div>
+        <p>Drag & drop photos here</p>
+        <p class="drop-sub">or click to browse (max 2MB each)</p>
+        <input type="file" id="fileInput" multiple accept="image/*" hidden>
+      </div>
+      <div id="uploadPreview" class="upload-preview"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="cancelUpload">Cancel</button>
+      <button class="btn-primary" id="confirmUpload">Upload Photos</button>
+    </div>
+  </div>
+</div>
+
+<script src="galleryadmin.js"></script>
+</body>
+</html>

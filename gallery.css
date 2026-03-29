@@ -288,7 +288,12 @@ section { padding: 6rem 8vw; }
   overflow: hidden;
 }
 
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.gallery-item-photo .gallery-image {
+  height: 220px;
+  background: var(--black);
+}
 
 .gallery-content {
   padding: 1.5rem;
