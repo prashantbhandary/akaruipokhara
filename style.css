@@ -23,14 +23,16 @@ body {
 
 /* ─── NAV ─── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 10px; left: 2vw; right: 2vw; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5vw;
-  height: 68px;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  border-top: 3px solid var(--navy);
+  padding: 0 2.5vw;
+  height: 62px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 
 .logo {
@@ -180,7 +182,7 @@ nav {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  padding-top: 68px;
+  padding-top: 82px;
   overflow: hidden;
   position: relative;
 }
@@ -1571,7 +1573,7 @@ footer p { font-size: 0.8125rem; }
   .process-steps::before { display: none; }
   .testi-grid { grid-template-columns: 1fr; }
   .cta-section { grid-template-columns: 1fr; }
-  nav { position: fixed; backdrop-filter: none; background: white; }
+  nav { position: fixed; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(255,255,255,0.65); }
   .nav-links {
     position: fixed;
     top: 0;

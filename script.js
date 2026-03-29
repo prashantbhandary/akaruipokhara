@@ -216,7 +216,7 @@ function initializeSmoothScroll() {
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          const navHeight = document.querySelector('nav').offsetHeight;
+          const navHeight = document.querySelector('nav').offsetHeight + 20;
           const rect = target.getBoundingClientRect();
           const targetPosition = rect.top + window.pageYOffset - navHeight;
 
