@@ -75,6 +75,8 @@ nav {
   gap: 4px;
   cursor: pointer;
   padding: 0;
+  position: relative;
+  z-index: 230;
 }
 
 .nav-burger-line {
@@ -360,6 +362,10 @@ footer p { font-size: 0.8125rem; }
   opacity: 1;
 }
 
+body.nav-menu-open {
+  overflow: hidden;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   nav { backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(255,255,255,0.65); }
@@ -375,10 +381,10 @@ footer p { font-size: 0.8125rem; }
   .team-section, .ceo-section { padding: 4rem 6vw; }
   .nav-links {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: -10px;
+    right: -2vw;
     width: 280px;
+    height: 100vh;
     background: white;
     border-left: 1px solid rgba(0,0,0,0.08);
     box-shadow: -4px 0 24px rgba(0,0,0,0.12);

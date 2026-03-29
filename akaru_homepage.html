@@ -12,6 +12,7 @@
     --red: #D92B2B;
     --red-dark: #A31F1F;
     --red-light: #FFEEEE;
+    --navy: #1A365D;
     --black: #111111;
     --off-white: #F7F4EF;
     --mid: #666055;
@@ -103,6 +104,8 @@
     gap: 4px;
     cursor: pointer;
     padding: 0;
+    position: relative;
+    z-index: 230;
   }
 
   .nav-burger-line {
@@ -1085,6 +1088,10 @@
     opacity: 1;
   }
 
+  body.nav-menu-open {
+    overflow: hidden;
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     nav { backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(255,255,255,0.65); }
@@ -1098,10 +1105,10 @@
     .cta-section { grid-template-columns: 1fr; }
     .nav-links {
       position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
+      top: -10px;
+      right: -2vw;
       width: 280px;
+      height: 100vh;
       background: white;
       border-left: 1px solid rgba(0,0,0,0.08);
       box-shadow: -4px 0 24px rgba(0,0,0,0.12);
@@ -1665,6 +1672,7 @@
       navLinksContainer.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
       overlay.classList.remove('active');
+      document.body.classList.remove('nav-menu-open');
     }
 
     if (burger && navLinksContainer) {
@@ -1673,8 +1681,10 @@
         burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         if (isOpen) {
           overlay.classList.add('active');
+          document.body.classList.add('nav-menu-open');
         } else {
           overlay.classList.remove('active');
+          document.body.classList.remove('nav-menu-open');
         }
       });
 
@@ -1682,6 +1692,12 @@
 
       window.addEventListener('resize', function () {
         if (window.innerWidth > 900) {
+          closeNavMenu();
+        }
+      });
+
+      window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
           closeNavMenu();
         }
       });
