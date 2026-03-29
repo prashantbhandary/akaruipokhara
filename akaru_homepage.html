@@ -57,6 +57,12 @@
   }
   .nav-links a:hover { color: var(--red); }
 
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   .nav-cta {
     background: var(--red);
     color: white;
@@ -80,6 +86,41 @@
     display: inline-flex; align-items: center; gap: 0.35rem;
   }
   .nav-call:hover { background: #122847; transform: translateY(-1px); }
+
+  .nav-burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.14);
+    background: white;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .nav-burger-line {
+    width: 18px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 999px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .nav-burger[aria-expanded="true"] .nav-burger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-burger[aria-expanded="true"] .nav-burger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-burger[aria-expanded="true"] .nav-burger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
 
   /* ─── HERO ─── */
   .hero {
@@ -1036,7 +1077,30 @@
     .process-steps::before { display: none; }
     .testi-grid { grid-template-columns: 1fr; }
     .cta-section { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 5vw;
+      right: 5vw;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.12);
+      padding: 0.8rem;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      display: block;
+      padding: 0.7rem 0.8rem;
+      border-radius: 10px;
+    }
+    .nav-links a:hover { background: var(--red-light); }
+    .nav-controls { gap: 0.5rem; }
+    .nav-cta { display: none; }
+    .nav-burger { display: inline-flex; }
     section { padding: 4rem 6vw; }
   }
 </style>
@@ -1052,10 +1116,18 @@
     <li><a href="#why">Why Us</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#testimonials">Stories</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Free Counselling →</a>
-  <a href="tel:061570978" class="nav-call">📞 Call Us</a>
+  <div class="nav-controls">
+    <a href="#contact" class="nav-cta">Free Counselling →</a>
+    <a href="tel:061570978" class="nav-call">📞 Call Us</a>
+    <button class="nav-burger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="nav-burger-line"></span>
+      <span class="nav-burger-line"></span>
+      <span class="nav-burger-line"></span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1549,6 +1621,39 @@
 
       target.prepend(layer);
     });
+
+    const nav = document.querySelector('nav');
+    const navLinksContainer = nav ? nav.querySelector('.nav-links') : null;
+    const burger = nav ? nav.querySelector('.nav-burger') : null;
+
+    function closeNavMenu() {
+      if (!navLinksContainer || !burger) return;
+      navLinksContainer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+
+    if (burger && navLinksContainer) {
+      burger.addEventListener('click', function () {
+        const isOpen = navLinksContainer.classList.toggle('open');
+        burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!nav.contains(event.target)) {
+          closeNavMenu();
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) {
+          closeNavMenu();
+        }
+      });
+
+      nav.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', closeNavMenu);
+      });
+    }
 
     initializeHeroPhotoSlider();
   });

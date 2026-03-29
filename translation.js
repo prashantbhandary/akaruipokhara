@@ -103,7 +103,7 @@
       'gallery.stat.visa': 'Visa Success Rate',
       'cta.title': 'Ready to Start Your<br><em>International Journey?</em>',
       'cta.sub': 'Book a free counselling session today — no obligations, just honest guidance.',
-      'cta.book': 'Book Free Session →',
+      'cta.book': 'See More →',
       'cta.follow': 'Follow us on Facebook',
       'contact.tag': 'Get in Touch',
       'contact.title': 'Start Your Journey<br>with AKARUI!',
