@@ -164,7 +164,46 @@
       'form.status.invalidEmail': 'Please enter a valid email address.',
       'form.status.submitting': 'Submitting your enquiry...',
       'form.status.success': 'Thank you. Your enquiry has been sent and our team will contact you within 24 hours.',
-      'form.status.error': 'There was an error submitting the form. Please try again.'
+      'form.status.error': 'There was an error submitting the form. Please try again.',
+      // Team page
+      'team.hero.title': 'Our Team',
+      'team.hero.sub': 'Meet the dedicated professionals behind AKARUI! Education Consultancy who are committed to making your dream of studying in Japan a reality.',
+      'team.ceo.tag': 'Chief Executive Officer',
+      'team.ceo.speech': '"At AKARUI!, we believe every student deserves a brighter future. Our mission is to bridge the gap between Nepal and Japan, providing personalized guidance and unwavering support throughout your educational journey. We don\'t just process applications — we build futures."',
+      'team.ceo.founder': '🎓 Founder & CEO',
+      'team.ceo.location': '📍 Pokhara, Nepal',
+      'team.section.tag': 'Our Experts',
+      'team.section.title': 'Leadership & Team',
+      'team.section.sub': 'A passionate team working together to guide students toward success in Japan.',
+      'team.role.md': 'Managing Director',
+      'team.role.ops': 'Operations Manager',
+      'team.role.counselor': 'Counselor',
+      'team.role.instructor': 'Japanese Language Instructor',
+      'team.role.doc': 'Documentation Officer',
+      'team.role.marketing': 'Marketing Coordinator',
+      'team.nav.home': 'Home',
+      'team.footer.home': 'Home',
+      'team.footer.contact': 'Contact',
+      // Gallery page
+      'gp.hero.title': 'Recent COE & Activities',
+      'gp.hero.sub': 'Explore the success stories, documents, and ongoing activities at AKARUI! Education Consultancy. See how we\'re helping students achieve their dreams in Japan.',
+      'gp.coe.tag': 'Latest Updates',
+      'gp.coe.title': 'Recent COE Documents',
+      'gp.coe.sub': 'Certificate of Eligibility documents and approved applications from our successful students.',
+      'gp.coe.label': 'COE',
+      'gp.coe.item.title': 'COE - Student 1',
+      'gp.coe.item.desc': 'Certificate of Eligibility approved and ready for visa processing.',
+      'gp.coe.item.date': '📅 To be added',
+      'gp.act.tag': 'Events & Updates',
+      'gp.act.title': 'Student Activities',
+      'gp.act.sub': 'Latest activities, events, and milestones from AKARUI! and our student community.',
+      'gp.act.label': 'Activity',
+      'gp.act.item.title': 'Recent Activity 1',
+      'gp.act.item.desc': 'Updates and highlights from our ongoing student activities and events.',
+      'gp.act.item.date': '📅 To be added',
+      'gp.nav.home': 'Home',
+      'gp.footer.home': 'Home',
+      'gp.footer.contact': 'Contact'
     },
     ja: {
       'meta.title': 'AKARUI! 留学コンサルティング',
@@ -327,7 +366,46 @@
       'form.status.invalidEmail': '有効なメールアドレスを入力してください。',
       'form.status.submitting': '送信しています...',
       'form.status.success': '送信ありがとうございました。24時間以内に担当者よりご連絡します。',
-      'form.status.error': '送信中にエラーが発生しました。もう一度お試しください。'
+      'form.status.error': '送信中にエラーが発生しました。もう一度お試しください。',
+      // Team page
+      'team.hero.title': '私たちのチーム',
+      'team.hero.sub': 'AKARUI! 教育コンサルティングの背後にいる、日本で学ぶ夢を実現するために尽力する専門スタッフをご紹介します。',
+      'team.ceo.tag': '最高経営責任者',
+      'team.ceo.speech': '「AKARUI! では、すべての学生がより明るい未来を手にする権利があると信じています。ネパールと日本をつなぎ、個別の指導と揺るぎないサポートを提供するのが私たちの使命です。私たちは申請を処理するだけでなく、未来を築きます。」',
+      'team.ceo.founder': '🎓 創設者兼CEO',
+      'team.ceo.location': '📍 ポカラ、ネパール',
+      'team.section.tag': '専門家チーム',
+      'team.section.title': 'リーダーシップ＆チーム',
+      'team.section.sub': '学生の日本での成功に向けて一丸となって取り組む情熱的なチーム。',
+      'team.role.md': 'マネージングディレクター',
+      'team.role.ops': 'オペレーションマネージャー',
+      'team.role.counselor': 'カウンセラー',
+      'team.role.instructor': '日本語講師',
+      'team.role.doc': 'ドキュメンテーションオフィサー',
+      'team.role.marketing': 'マーケティングコーディネーター',
+      'team.nav.home': 'ホーム',
+      'team.footer.home': 'ホーム',
+      'team.footer.contact': 'お問い合わせ',
+      // Gallery page
+      'gp.hero.title': '最近のCOE＆活動',
+      'gp.hero.sub': 'AKARUI! 教育コンサルティングの成功事例、書類、そして進行中の活動をご覧ください。学生たちが日本での夢を叶える様子をご紹介します。',
+      'gp.coe.tag': '最新情報',
+      'gp.coe.title': '最近のCOE書類',
+      'gp.coe.sub': '当校の優秀な学生からの在留資格認定証明書と承認済み申請書類。',
+      'gp.coe.label': 'COE',
+      'gp.coe.item.title': 'COE - 学生1',
+      'gp.coe.item.desc': '在留資格認定証明書が承認され、ビザ手続きの準備が完了しました。',
+      'gp.coe.item.date': '📅 追加予定',
+      'gp.act.tag': 'イベント＆更新',
+      'gp.act.title': '学生活動',
+      'gp.act.sub': 'AKARUI! と学生コミュニティの最新活動、イベント、マイルストーン。',
+      'gp.act.label': 'アクティビティ',
+      'gp.act.item.title': '最近のアクティビティ 1',
+      'gp.act.item.desc': '進行中の学生活動やイベントからの最新情報とハイライト。',
+      'gp.act.item.date': '📅 追加予定',
+      'gp.nav.home': 'ホーム',
+      'gp.footer.home': 'ホーム',
+      'gp.footer.contact': 'お問い合わせ'
     },
     ne: {
       'meta.title': 'AKARUI! शिक्षा परामर्श',
@@ -490,7 +568,46 @@
       'form.status.invalidEmail': 'कृपया मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।',
       'form.status.submitting': 'तपाईंको फारम पठाइँदैछ...',
       'form.status.success': 'धन्यवाद। तपाईंको फारम पठाइएको छ र हाम्रो टोलीले २४ घण्टाभित्र सम्पर्क गर्नेछ।',
-      'form.status.error': 'फारम पठाउँदा समस्या भयो। कृपया फेरि प्रयास गर्नुहोस्।'
+      'form.status.error': 'फारम पठाउँदा समस्या भयो। कृपया फेरि प्रयास गर्नुहोस्।',
+      // Team page
+      'team.hero.title': 'हाम्रो टोली',
+      'team.hero.sub': 'AKARUI! शिक्षा परामर्शका पछाडि रहेका समर्पित पेशेवरहरूलाई भेट्नुहोस्, जो जापानमा अध्ययनको तपाईंको सपना साकार पार्न प्रतिबद्ध छन्।',
+      'team.ceo.tag': 'प्रमुख कार्यकारी अधिकृत',
+      'team.ceo.speech': '"AKARUI! मा हामी विश्वास गर्छौं कि हरेक विद्यार्थी उज्ज्वल भविष्यको हकदार छ। नेपाल र जापानबीचको दूरी कम गर्ने, व्यक्तिगत मार्गदर्शन र अटल सहयोग प्रदान गर्ने — यही हाम्रो लक्ष्य हो। हामी केवल आवेदन प्रक्रिया गर्दैनौं — भविष्य निर्माण गर्छौं।"',
+      'team.ceo.founder': '🎓 संस्थापक तथा CEO',
+      'team.ceo.location': '📍 पोखरा, नेपाल',
+      'team.section.tag': 'हाम्रा विशेषज्ञ',
+      'team.section.title': 'नेतृत्व र टोली',
+      'team.section.sub': 'विद्यार्थीहरूलाई जापानमा सफलताको बाटोमा मार्गदर्शन गर्ने उत्साही टोली।',
+      'team.role.md': 'कार्यकारी निर्देशक',
+      'team.role.ops': 'सञ्चालन प्रबन्धक',
+      'team.role.counselor': 'परामर्शदाता',
+      'team.role.instructor': 'जापानी भाषा प्रशिक्षक',
+      'team.role.doc': 'कागजात अधिकृत',
+      'team.role.marketing': 'मार्केटिङ समन्वयकर्ता',
+      'team.nav.home': 'गृहपृष्ठ',
+      'team.footer.home': 'गृहपृष्ठ',
+      'team.footer.contact': 'सम्पर्क',
+      // Gallery page
+      'gp.hero.title': 'हालैका COE र गतिविधिहरू',
+      'gp.hero.sub': 'AKARUI! शिक्षा परामर्शका सफलताका कथाहरू, कागजातहरू र चलिरहेका गतिविधिहरू अन्वेषण गर्नुहोस्। विद्यार्थीहरूले जापानमा सपना कसरी पुरा गर्दैछन् हेर्नुहोस्।',
+      'gp.coe.tag': 'नवीनतम अपडेट',
+      'gp.coe.title': 'हालका COE कागजातहरू',
+      'gp.coe.sub': 'हाम्रा सफल विद्यार्थीहरूबाट प्राप्त योग्यता प्रमाणपत्र र स्वीकृत आवेदन कागजातहरू।',
+      'gp.coe.label': 'COE',
+      'gp.coe.item.title': 'COE - विद्यार्थी १',
+      'gp.coe.item.desc': 'योग्यताको प्रमाणपत्र स्वीकृत र भिसा प्रक्रियाको लागि तयार।',
+      'gp.coe.item.date': '📅 थपिँदैछ',
+      'gp.act.tag': 'कार्यक्रम र अपडेट',
+      'gp.act.title': 'विद्यार्थी गतिविधिहरू',
+      'gp.act.sub': 'AKARUI! र हाम्रो विद्यार्थी समुदायका ताजा गतिविधिहरू, कार्यक्रमहरू र उपलब्धिहरू।',
+      'gp.act.label': 'गतिविधि',
+      'gp.act.item.title': 'हालैको गतिविधि १',
+      'gp.act.item.desc': 'हाम्रा चलिरहेका विद्यार्थी गतिविधिहरू र कार्यक्रमहरूका अपडेट र हाइलाइटहरू।',
+      'gp.act.item.date': '📅 थपिँदैछ',
+      'gp.nav.home': 'गृहपृष्ठ',
+      'gp.footer.home': 'गृहपृष्ठ',
+      'gp.footer.contact': 'सम्पर्क'
     }
   };
 
@@ -651,6 +768,66 @@
     { selector: 'footer p', key: 'footer.copy' }
   ];
 
+  // Team page bindings (team.html)
+  const teamBindings = [
+    { selector: 'title', key: 'meta.title' },
+    { selector: '.sr-only', key: 'nav.language' },
+    { selector: '.nav-links li:nth-child(1) a', key: 'team.nav.home' },
+    { selector: '.nav-call', key: 'nav.call' },
+    { selector: '.team-hero-content h1', key: 'team.hero.title' },
+    { selector: '.team-hero-content p', key: 'team.hero.sub' },
+    { selector: '.ceo-tag', key: 'team.ceo.tag' },
+    { selector: '.ceo-speech', key: 'team.ceo.speech' },
+    { selector: '.ceo-details span:nth-child(1)', key: 'team.ceo.founder' },
+    { selector: '.ceo-details span:nth-child(2)', key: 'team.ceo.location' },
+    { selector: '.team-section .section-tag', key: 'team.section.tag' },
+    { selector: '.team-section .section-title', key: 'team.section.title' },
+    { selector: '.team-section .section-sub', key: 'team.section.sub' },
+    { selector: '.team-card:nth-child(1) .team-role', key: 'team.role.md' },
+    { selector: '.team-card:nth-child(2) .team-role', key: 'team.role.ops' },
+    { selector: '.team-card:nth-child(3) .team-role', key: 'team.role.counselor' },
+    { selector: '.team-card:nth-child(4) .team-role', key: 'team.role.instructor' },
+    { selector: '.team-card:nth-child(5) .team-role', key: 'team.role.doc' },
+    { selector: '.team-card:nth-child(6) .team-role', key: 'team.role.marketing' },
+    { selector: 'footer .footer-links li:nth-child(1) a', key: 'team.footer.home' },
+    { selector: 'footer .footer-links li:nth-child(2) a', key: 'team.footer.contact' },
+    { selector: 'footer p', key: 'footer.copy' }
+  ];
+
+  // Gallery page bindings (gallery.html)
+  var galleryPageBindings = [
+    { selector: 'title', key: 'meta.title' },
+    { selector: '.sr-only', key: 'nav.language' },
+    { selector: '.nav-links li:nth-child(1) a', key: 'gp.nav.home' },
+    { selector: '.nav-call', key: 'nav.call' },
+    { selector: '.gallery-hero-content h1', key: 'gp.hero.title' },
+    { selector: '.gallery-hero-content p', key: 'gp.hero.sub' },
+    { selector: '.coe-section .section-tag', key: 'gp.coe.tag' },
+    { selector: '.coe-section .section-title', key: 'gp.coe.title' },
+    { selector: '.coe-section .section-sub', key: 'gp.coe.sub' },
+    { selector: '.coe-section .gallery-label', key: 'gp.coe.label' },
+    { selector: '.coe-section .gallery-title', key: 'gp.coe.item.title' },
+    { selector: '.coe-section .gallery-desc', key: 'gp.coe.item.desc' },
+    { selector: '.coe-section .gallery-date', key: 'gp.coe.item.date' },
+    { selector: '.activities-section .section-tag', key: 'gp.act.tag' },
+    { selector: '.activities-section .section-title', key: 'gp.act.title' },
+    { selector: '.activities-section .section-sub', key: 'gp.act.sub' },
+    { selector: '.activities-section .gallery-label', key: 'gp.act.label' },
+    { selector: '.activities-section .gallery-title', key: 'gp.act.item.title' },
+    { selector: '.activities-section .gallery-desc', key: 'gp.act.item.desc' },
+    { selector: '.activities-section .gallery-date', key: 'gp.act.item.date' },
+    { selector: 'footer .footer-links li:nth-child(1) a', key: 'gp.footer.home' },
+    { selector: 'footer .footer-links li:nth-child(2) a', key: 'gp.footer.contact' },
+    { selector: 'footer p', key: 'footer.copy' }
+  ];
+
+  function getPageBindings() {
+    var path = window.location.pathname;
+    if (path.indexOf('team') !== -1) return teamBindings;
+    if (path.indexOf('gallery') !== -1) return galleryPageBindings;
+    return bindings;
+  }
+
   function t(key) {
     return (translations[currentLanguage] && translations[currentLanguage][key]) || translations.en[key] || key;
   }
@@ -757,7 +934,7 @@
     currentLanguage = lang;
     document.documentElement.lang = lang;
 
-    bindings.forEach(applyBinding);
+    getPageBindings().forEach(applyBinding);
     translateProcessSection();
     translateFormLabelsAndPlaceholders();
 
