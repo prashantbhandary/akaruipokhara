@@ -189,7 +189,7 @@ nav, section, footer, .marquee-strip {
   isolation: isolate;
 }
 
-nav > *:not(.jp-glyph-layer),
+nav > *:not(.jp-glyph-layer):not(.nav-links),
 section > *:not(.jp-glyph-layer),
 footer > *:not(.jp-glyph-layer),
 .marquee-strip > *:not(.jp-glyph-layer) {
