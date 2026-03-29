@@ -1067,6 +1067,21 @@
   .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8125rem; transition: color 0.2s; }
   .footer-links a:hover { color: white; }
 
+  /* ─── MOBILE NAV OVERLAY ─── */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .nav-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -1078,24 +1093,31 @@
     .testi-grid { grid-template-columns: 1fr; }
     .cta-section { grid-template-columns: 1fr; }
     .nav-links {
-      display: none;
-      position: absolute;
-      top: 68px;
-      left: 5vw;
-      right: 5vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
       background: white;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 14px;
-      box-shadow: 0 18px 34px rgba(0,0,0,0.12);
-      padding: 0.8rem;
+      border-right: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+      padding: 5rem 1.5rem 2rem;
       flex-direction: column;
       gap: 0.25rem;
+      z-index: 200;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      display: flex;
     }
-    .nav-links.open { display: flex; }
+    .nav-links.open {
+      transform: translateX(0);
+    }
     .nav-links a {
       display: block;
-      padding: 0.7rem 0.8rem;
+      padding: 0.85rem 1rem;
       border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 500;
     }
     .nav-links a:hover { background: var(--red-light); }
     .nav-controls { gap: 0.5rem; }
@@ -1626,23 +1648,30 @@
     const navLinksContainer = nav ? nav.querySelector('.nav-links') : null;
     const burger = nav ? nav.querySelector('.nav-burger') : null;
 
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
     function closeNavMenu() {
       if (!navLinksContainer || !burger) return;
       navLinksContainer.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
+      overlay.classList.remove('active');
     }
 
     if (burger && navLinksContainer) {
       burger.addEventListener('click', function () {
         const isOpen = navLinksContainer.classList.toggle('open');
         burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-
-      document.addEventListener('click', function (event) {
-        if (!nav.contains(event.target)) {
-          closeNavMenu();
+        if (isOpen) {
+          overlay.classList.add('active');
+        } else {
+          overlay.classList.remove('active');
         }
       });
+
+      overlay.addEventListener('click', closeNavMenu);
 
       window.addEventListener('resize', function () {
         if (window.innerWidth > 900) {
