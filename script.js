@@ -206,22 +206,27 @@ function initializeSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href === '#') {
+      if (href === '#' || href === '#home') {
         e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
 
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        // Add extra offset for fixed navbar
-        const navHeight = document.querySelector('nav').offsetHeight;
-        const targetPosition = target.offsetTop - navHeight;
+      try {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const navHeight = document.querySelector('nav').offsetHeight;
+          const rect = target.getBoundingClientRect();
+          const targetPosition = rect.top + window.pageYOffset - navHeight;
 
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      } catch (err) {
+        // Invalid selector, let browser handle it
       }
     });
   });

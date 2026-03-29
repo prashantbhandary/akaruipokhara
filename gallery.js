@@ -12,28 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 120 * index);
   });
 
-  // Burger menu toggle
+  // Burger menu toggle with overlay
   const nav = document.querySelector('nav');
   const navLinksContainer = nav ? nav.querySelector('.nav-links') : null;
   const burger = nav ? nav.querySelector('.nav-burger') : null;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'nav-overlay';
+  document.body.appendChild(overlay);
 
   function closeNavMenu() {
     if (!navLinksContainer || !burger) return;
     navLinksContainer.classList.remove('open');
     burger.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('active');
   }
 
   if (burger && navLinksContainer) {
     burger.addEventListener('click', function() {
       const isOpen = navLinksContainer.classList.toggle('open');
       burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', function(event) {
-      if (!nav.contains(event.target)) {
-        closeNavMenu();
+      if (isOpen) {
+        overlay.classList.add('active');
+      } else {
+        overlay.classList.remove('active');
       }
     });
+
+    overlay.addEventListener('click', closeNavMenu);
 
     window.addEventListener('resize', function() {
       if (window.innerWidth > 900) {

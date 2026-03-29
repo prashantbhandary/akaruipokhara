@@ -308,6 +308,21 @@ footer p { font-size: 0.8125rem; }
 .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8125rem; transition: color 0.2s; }
 .footer-links a:hover { color: white; }
 
+/* ─── MOBILE NAV OVERLAY ─── */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .ceo-card {
@@ -320,6 +335,40 @@ footer p { font-size: 0.8125rem; }
   .ceo-details { justify-content: center; }
   .team-grid { grid-template-columns: 1fr 1fr; }
   .team-section, .ceo-section { padding: 4rem 6vw; }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background: white;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+    padding: 5rem 1.5rem 2rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    list-style: none;
+    overflow-y: auto;
+  }
+  .nav-links li { list-style: none; }
+  .nav-links.open {
+    transform: translateX(0);
+  }
+  .nav-links a {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .nav-links a:hover { background: var(--red-light); }
+  .nav-controls { gap: 0.5rem; }
+  .nav-cta { display: none; }
+  .nav-burger { display: inline-flex; }
 }
 
 @media (max-width: 600px) {
