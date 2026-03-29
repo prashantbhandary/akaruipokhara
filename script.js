@@ -25,7 +25,7 @@ function initializeSiteGlyphs() {
     layer.className = 'jp-glyph-layer';
     layer.setAttribute('aria-hidden', 'true');
 
-    const glyphCount = target.matches('nav, footer, .marquee-strip') ? 8 : 14;
+    const glyphCount = target.matches('nav, footer, .marquee-strip') ? 5 : 8;
 
     for (let index = 0; index < glyphCount; index += 1) {
       const glyph = document.createElement('span');
@@ -34,7 +34,7 @@ function initializeSiteGlyphs() {
       glyph.textContent = glyphs[charIndex];
       glyph.style.left = `${6 + ((index * 11 + targetIndex * 7) % 84)}%`;
       glyph.style.top = `${8 + ((index * 13 + targetIndex * 9) % 78)}%`;
-      glyph.style.setProperty('--size', `${1.15 + ((index + targetIndex) % 5) * 0.45}rem`);
+      glyph.style.setProperty('--size', `${1.0 + ((index + targetIndex) % 5) * 0.32}rem`);
       glyph.style.setProperty('--duration', `${15 + ((index + targetIndex) % 7) * 1.8}s`);
       glyph.style.setProperty('--delay', `${-1 * ((index * 1.3) % 8)}s`);
       glyph.style.setProperty('--rotate', `${((index % 6) - 3) * 4}deg`);

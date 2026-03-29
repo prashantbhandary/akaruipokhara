@@ -213,10 +213,10 @@ footer > *:not(.jp-glyph-layer),
   position: absolute;
   font-family: 'Montserrat', 'Roboto', sans-serif;
   font-weight: 800;
-  font-size: var(--size, clamp(1.2rem, 2vw, 2.4rem));
+  font-size: var(--size, clamp(1rem, 1.5vw, 1.8rem));
   line-height: 1;
-  color: rgba(26,54,93,0.08);
-  text-shadow: 0 8px 18px rgba(26,54,93,0.04);
+  color: rgba(26,54,93,0.055);
+  text-shadow: 0 8px 18px rgba(26,54,93,0.025);
   animation: glyphDrift var(--duration, 18s) ease-in-out infinite;
   animation-delay: var(--delay, 0s);
   transform: translate3d(0, 0, 0) rotate(var(--rotate, 0deg)) scale(1);
@@ -224,12 +224,12 @@ footer > *:not(.jp-glyph-layer),
 }
 
 .jp-glyph.red {
-  color: rgba(227,30,36,0.07);
-  text-shadow: 0 8px 18px rgba(227,30,36,0.04);
+  color: rgba(227,30,36,0.045);
+  text-shadow: 0 8px 18px rgba(227,30,36,0.025);
 }
 
 .jp-glyph.soft {
-  opacity: 0.65;
+  opacity: 0.55;
 }
 
 .kana-float-layer {
