@@ -42,8 +42,8 @@ nav {
   color: var(--red);
   letter-spacing: -0.5px;
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
 }
 
