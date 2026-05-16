@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --font-sora: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-newsreader: Georgia, "Times New Roman", serif;
+  --brand-red: #e31e24;
+  --brand-red-dark: #b4141a;
+  --brand-navy: #173152;
+  --brand-slate: #2b3445;
+  --brand-ivory: #f7f5f1;
+  --brand-mist: #eef2f6;
+  --brand-ink: #0c111b;
+  --brand-gold: #c89f6d;
+  --brand-green: #2e7d6a;
+  --background: #fbfbfc;
+  --foreground: #0c111b;
+  --surface: #ffffff;
+  --surface-muted: #f2f4f8;
+  --border: rgba(23, 49, 82, 0.12);
+  --shadow-soft: 0 18px 50px rgba(12, 17, 27, 0.08);
+  --shadow-card: 0 16px 40px rgba(12, 17, 27, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sora);
+  --font-serif: var(--font-newsreader);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(227, 30, 36, 0.04), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #fbfbfc 55%, #f5f6f9 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.pattern-grid {
+  background-image: radial-gradient(rgba(23, 49, 82, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 18px 40px rgba(12, 17, 27, 0.12);
+  backdrop-filter: blur(20px);
+}
+
+.marquee-track {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reveal-fade {
+  animation: reveal-fade-in 0.6s ease-out both;
+  will-change: transform, opacity;
+}
+
+@keyframes reveal-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

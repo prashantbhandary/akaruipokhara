@@ -1,34 +1,42 @@
-# Embedr IDE config
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js build output
+.next/
+out/
+
+# production build
+build/
+
+# environment variables
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# agent / ide files
+AGENTS.md
+CLAUDE.md
 embedr.yaml
+akaruipokhara/embedr.yaml
 
-# OS generated files
+# os files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-Desktop.ini
 
-# Editor directories and files
+# editor
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.project
-.settings/
 
-# Node modules (if you ever add npm)
-node_modules/
-package-lock.json
-
-# Logs
+# misc
 *.log
 npm-debug.log*
-
-# Local environment
-.env
-.env.local
-.env.*.local
+yarn-debug.log*
+yarn-error.log*
