@@ -54,13 +54,13 @@ export function Navbar() {
         ? navCopy.destinations
         : link.href === "/services"
           ? navCopy.services
-          : link.href === "/#why-us"
+          : link.href === "/about"
             ? navCopy.whyUs
-            : link.href === "/#team"
+            : link.href === "/team"
               ? navCopy.team
-              : link.href === "/#stories"
+              : link.href === "/testimonials"
                 ? navCopy.stories
-                : link.href === "/#gallery"
+                : link.href === "/gallery"
                   ? navCopy.gallery
                   : navCopy.contact;
 

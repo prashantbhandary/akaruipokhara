@@ -16,11 +16,11 @@ import {
 export const navLinks = [
   { label: "Destinations", href: "/destinations" },
   { label: "Services", href: "/services" },
-  { label: "Why Us", href: "/#why-us" },
-  { label: "Team", href: "/#team" },
-  { label: "Stories", href: "/#stories" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Why Us", href: "/about" },
+  { label: "Team", href: "/team" },
+  { label: "Stories", href: "/testimonials" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const stats = [
