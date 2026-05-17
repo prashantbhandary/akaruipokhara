@@ -83,20 +83,20 @@ export function Navbar() {
   return (
     <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-4">
       <div className="glass-panel flex items-center justify-between gap-3 rounded-2xl px-3 py-2 md:px-5">
-        <Link href={withLanguage("/")} className="flex items-center gap-2">
+        <Link href={withLanguage("/")} className="flex min-w-0 items-center gap-2">
           <Image
             src="/assets/gallery/LOGO/Akarui%20Logo.webp"
             alt="Akarui Education Pokhara"
             width={44}
             height={44}
-            className="h-10 w-10 rounded-lg object-contain"
+            className="h-9 w-9 rounded-lg object-contain sm:h-10 sm:w-10"
             priority
           />
-          <div className="hidden sm:block">
-            <p className="text-xs font-semibold text-[var(--brand-ink)]">
+          <div className="min-w-0">
+            <p className="truncate text-[11px] font-semibold text-[var(--brand-ink)] sm:text-xs">
               AKARUI! Education Consultancy
             </p>
-            <p className="text-[10px] text-[var(--brand-slate)]">
+            <p className="hidden text-[10px] text-[var(--brand-slate)] sm:block">
               Pokhara, Nepal
             </p>
           </div>
