@@ -35,11 +35,11 @@ export function CtaBand({
             {description}
           </p>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg" variant="primary">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Button asChild size="lg" variant="primary" className="min-w-[168px] justify-center whitespace-nowrap">
             <Link href={primaryHref}>{primaryAction}</Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="bg-white">
+          <Button asChild size="lg" variant="outline" className="min-w-[168px] justify-center whitespace-nowrap bg-white">
             <Link href={secondaryHref}>{secondaryAction}</Link>
           </Button>
         </div>
