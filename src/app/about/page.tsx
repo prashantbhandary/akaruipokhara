@@ -31,13 +31,15 @@ export default async function AboutPage({ searchParams }: AboutPageProps) {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="relative overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+          <div className="relative max-h-[480px] overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
             <Image
-              src="/assets/gallery/Interview%20Photo/IMG_6408.JPG"
+              src="/assets/gallery/Interview%20Photo/IMG_6414.JPG"
               alt="Akarui Education Pokhara office"
               width={620}
               height={520}
-              className="h-full w-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 520px"
+              quality={80}
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </Reveal>

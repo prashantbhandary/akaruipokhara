@@ -85,7 +85,7 @@ export function Navbar() {
       <div className="glass-panel flex items-center justify-between gap-3 rounded-2xl px-3 py-2 md:px-5">
         <Link href={withLanguage("/")} className="flex items-center gap-2">
           <Image
-            src="/assets/akarui/akaruilogobg.png"
+            src="/assets/gallery/LOGO/Akarui%20Logo.webp"
             alt="Akarui Education Pokhara"
             width={44}
             height={44}

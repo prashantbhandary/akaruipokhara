@@ -42,7 +42,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/assets/akarui/akaruilogobg.png"
+                  src="/assets/gallery/LOGO/Akarui%20Logo.webp"
                   alt="Akarui Education Pokhara"
                   width={44}
                   height={44}
@@ -76,13 +76,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             <div className="relative">
               <div className="absolute -left-10 top-10 h-36 w-36 rounded-full bg-[rgba(227,30,36,0.15)] blur-2xl" />
               <div className="absolute -bottom-6 right-4 h-40 w-40 rounded-full bg-[rgba(23,49,82,0.12)] blur-2xl" />
-              <div className="relative overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+              <div className="relative max-h-[520px] overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
                 <Image
                   src="/assets/gallery/ECA/IMG_6441.JPG"
                   alt="Akarui Education Pokhara counseling session"
                   width={680}
                   height={720}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  quality={80}
                   className="h-full w-full object-cover"
                   priority
                 />
